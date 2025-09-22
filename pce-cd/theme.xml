@@ -1,0 +1,43 @@
+<theme>
+	<formatVersion>7</formatVersion>
+	<include>./../theme.xml</include>
+<include>./../_inc/system/hidenames.xml</include>
+
+
+  <view name="detailed">
+
+    <textlist name="gamelist">
+     <selectorColor>EB222C</selectorColor>
+     <selectedColor>ffffff</selectedColor>
+   </textlist>
+
+ <textlist ifSubset="artworkregion:US" name="gamelist">
+     <selectorColor>F79226</selectorColor>
+     <selectedColor>000000</selectedColor>
+   </textlist>
+ </view>
+
+
+
+<view name="grid">
+  <image name="gridtile.favorite">
+    <color>EB222Cff</color>
+  </image>  
+
+  <image ifSubset="artworkregion:US" name="gridtile.favorite">
+    <color>F79226ff</color>
+  </image>  
+</view>
+
+
+<customView name="Tiles" inherits="grid">
+  <gridtile name="selected">
+    <backgroundEdgeColor>EB222C</backgroundEdgeColor>
+  </gridtile>
+
+<gridtile ifSubset="artworkregion:US" name="selected">
+    <backgroundEdgeColor>F79226</backgroundEdgeColor>
+  </gridtile>
+</customView>
+
+</theme>

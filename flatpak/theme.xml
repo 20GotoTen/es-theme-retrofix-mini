@@ -1,0 +1,40 @@
+<theme>
+	<formatVersion>7</formatVersion>
+	<include>./../theme.xml</include>
+<include>./../_inc/system/hidenames.xml</include>
+
+  <view name="system">
+   <image name="startSet" extra="static"></image>
+   <text name="browseGames" extra="static">
+    <text>Browse apps</text>
+    <pos>0.3239583333333333 0.933</pos>
+    <origin>0 1</origin>
+    <maxSize>1 0.05</maxSize>
+    <color>ffffff</color>
+    <fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+    <fontSize>0.019</fontSize>
+    <alignment>left</alignment>
+    <zIndex>200</zIndex>
+  </text>
+ </view>
+
+ <view name="detailed">
+  <textlist name="gamelist">
+   <selectorColor>FF0000</selectorColor>
+   <selectedColor>ffffff</selectedColor>
+ </textlist>
+</view>
+
+<view name="grid">
+  <image name="gridtile.favorite">
+    <color>FF0000ff</color>
+  </image>  
+</view>
+
+<customView name="Tiles" inherits="grid">
+  <gridtile name="selected">
+    <backgroundEdgeColor>FF0000</backgroundEdgeColor>
+  </gridtile>
+</customView>
+
+</theme>

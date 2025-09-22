@@ -1,0 +1,72 @@
+<theme>
+	<formatVersion>7</formatVersion>
+	<include>./../theme.xml</include>
+<include>./../_inc/system/hidenames.xml</include>
+
+	<view name="system">
+		<image name="startSet" extra="static"></image>
+
+    <image ifSubset="artworkregion:EU" name="gamemarker" extra="static">
+      <path>./_inc/marker-eu.png</path>
+    </image>  
+
+
+
+
+
+
+
+<image name="startSet" ifSubset="artworkregion:EU" extra="static">
+      <path>./_inc/start-eu.png</path>
+    </image>
+
+	</view>
+
+
+
+	<view name="detailed">
+		<textlist name="gamelist">
+			<selectorColor>F57E25</selectorColor>
+			<selectedColor>000000</selectedColor>
+		</textlist>
+
+ <textlist ifSubset="artworkregion:EU" name="gamelist">
+     <selectorColor>FF3333</selectorColor>
+     <selectedColor>000000</selectedColor>
+   </textlist>
+
+
+	</view>
+
+
+
+
+	<view name="grid">
+		<image name="gridtile.favorite">
+			<color>F57E25ff</color>
+		</image>  
+
+  <image  ifSubset="artworkregion:EU" name="gridtile.favorite">
+    <color>FF3333ff</color>
+  </image>  
+
+	</view>
+
+
+
+
+	<customView name="Tiles" inherits="grid">
+		<gridtile name="selected">
+			<backgroundEdgeColor>F57E25</backgroundEdgeColor>
+		</gridtile>
+
+<gridtile ifSubset="artworkregion:EU" name="selected">
+    <backgroundEdgeColor>FF3333</backgroundEdgeColor>
+  </gridtile>
+</customView>
+
+
+
+
+
+</theme>
