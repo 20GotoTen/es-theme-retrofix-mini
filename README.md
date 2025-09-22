@@ -7,7 +7,7 @@ First release 22/09/2025
 
 
 
-![Logo](https://github.com/20GotoTen/es-theme-retrofix-mini/blob/master/_inc/screenshot/reposcreen.png "Logo")
+![Logo](https://github.com/20GotoTen/es-theme-retrofix-mini/blob/master/_inc/screenshot/reposcreen.png](https://github.com/20GotoTen/es-theme-retrofix-mini/blob/main/_inc/screenshot/reposcreen.png "Logo")
 
 
 
