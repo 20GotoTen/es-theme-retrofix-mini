@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-theme name:     Retrofix
+theme name:     Retrofix Mini
 author:         20goto10
-version:    	2.0
-System      	Batocera 5.25+
-GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
+version:    	0.2
+System      	Batocera, Knulli 5.41+
+GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 -->
 
 <theme defaultView="Vertical Boxes" defaultTransition="fade & slide">
@@ -14,10 +14,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	<formatVersion>7</formatVersion>
 
 	<variables>
-		<!--<subset.UImode>UI modes</subset.UImode>-->
 		<subset.mainVideoDelay>Main menu video delay</subset.mainVideoDelay>
 		<subset.systemVideoDelay>System views video delay</subset.systemVideoDelay>
-		<!--<subset.animations>Animations</subset.animations>-->
 		<subset.primaryButton>Primary button graphic</subset.primaryButton>
 		<subset.secondaryButton>Secondary button graphic</subset.secondaryButton>
 		<subset.artworkregion>System logos</subset.artworkregion>
@@ -32,14 +30,14 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	<subset name="mainVideoDelay" displayName="${subset.mainVideoDelay}">
 		<include name="5 Seconds"/>
 		<include name="2 Seconds"/>
-				<include name="1 Second"/>
+		<include name="1 Second"/>
 		<include name="Video off"/>
 	</subset>
 
 	<subset name="systemVideoDelay" displayName="${subset.systemVideoDelay}">
 		<include name="5 Seconds"/>
 		<include name="2 Seconds"/>
-				<include name="1 Second"/>
+		<include name="1 Second"/>
 		<include name="Video off"/>
 	</subset>
 
@@ -52,8 +50,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 
 
 	<subset name="hideLogo" displayName="${subset.hideLogo}">
-				<include name="Hide logo"/>
-				<include name="Show logo"/>
+		<include name="Hide logo"/>
+		<include name="Show logo"/>
 	</subset>
 
 
@@ -117,7 +115,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	<!-- ----------------- Menu view properties ------------ -->
 
 
-		<view name="menu">
+	<view name="menu">
 		<menuText name="menutitle">
 			<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
 			<fontSize>0.048</fontSize>
@@ -281,24 +279,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 
 
 
-		</stackpanel>
-
-		<!-- -------- END stackpanel implementation for system screen ------ -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		</stackpanel> <!-- -------- END stackpanel implementation for system screen ------ -->
 
 		<image name="logo">
 			<linearSmooth>true</linearSmooth>		
@@ -309,757 +290,523 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 			<path ifSubset="artworkregion:MIX">./${system.theme}/_inc/mainlogo.svg</path>
 		</image>
 
-	<!--<image name="mainlogo" extra="true">
-		<linearSmooth>true</linearSmooth>
-		<origin>0 1</origin>
-		<pos>0.28125 0.750185185185185</pos>
-		<maxSize>0.192708333333333 0.192708333333333</maxSize>
-		<zIndex>100</zIndex>	
-		<path>./${system.theme}/_inc/mainlogo.svg</path>
-		<path ifSubset="artworkregion:JP">./${system.theme}/_inc/mainlogo-jp.svg</path>
-		<path ifSubset="artworkregion:US">./${system.theme}/_inc/mainlogo-us.svg</path>
-		<path ifSubset="artworkregion:EU">./${system.theme}/_inc/mainlogo-eu.svg</path>
-		<path ifSubset="artworkregion:MIX">./${system.theme}/_inc/mainlogo.svg</path>
-	</image>-->
+		<image name="background" extra="true">
+			<origin>0 0</origin>
+			<pos>0 0</pos>
+			<maxSize>1 1</maxSize>
+			<path>./_inc/assets/black/background.png</path>
+			<zIndex>0</zIndex>
+		</image>
 
-	<image name="background" extra="true">
-		<origin>0 0</origin>
-		<pos>0 0</pos>
-		<maxSize>1 1</maxSize>
-		<path>./_inc/assets/black/background.png</path>
-		<zIndex>0</zIndex>
-	</image>
-
-	<image name="sysBackgrounds"  extra="static">
-		<zIndex>0</zIndex>
-		<origin>0.5 0.5</origin>
-		<pos>0.615 0.5</pos>
-		<size>0.770833333333333 0</size> 
-		<maxSize>2 2</maxSize>
-		<path>./_inc/assets/defaultbg.png</path>
-		<path>./${system.theme}/_inc/bg.jpg</path>
-		<linearSmooth>true</linearSmooth>
-		<storyboard>
-			<animation property="scale" from="1.30" to="1" begin="0" duration="9000" mode="easeOut"/>
-		</storyboard>
-	</image>
-
-
+		<image name="sysBackgrounds"  extra="static">
+			<zIndex>0</zIndex>
+			<origin>0.5 0.5</origin>
+			<pos>0.615 0.5</pos>
+			<size>0.770833333333333 0</size> 
+			<maxSize>2 2</maxSize>
+			<path>./_inc/assets/defaultbg.png</path>
+			<path>./${system.theme}/_inc/bg.jpg</path>
+			<linearSmooth>true</linearSmooth>
+			<storyboard>
+				<animation property="scale" from="1.30" to="1" begin="0" duration="9000" mode="easeOut"/>
+			</storyboard>
+		</image>
 
-	<image name="scanlines" extra="true">
-		<path ifSubset="scanlinesMain:No scanlines"/>
-		<path ifSubset="scanlinesMain:Light scanlines">./_inc/assets/scanlines.png</path>
-		<path ifSubset="scanlinesMain:Dark scanlines">./_inc/assets/darkscanlines.png</path>
-		<size>1 1</size>
-		<pos>0 0</pos>
-		<origin>0 0</origin>
-		<zIndex>1</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>
 
 
-
-	<!-- ----- this is the image that provides the gradient for the carousel and the tint for the main image. suggest splitting these so the image gradient can be turned on if a system theme has been defined ----- -->
-
-	<image name="background2" extra="static">
-		<path>./_inc/assets/black/overlay.png</path>
-		<size>1 1</size>
-		<pos>0 0</pos><!-- was 0 0 -->
-		<origin>0 0</origin>
-		<zIndex>1</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>
+		<image name="scanlines" extra="true">
+			<path ifSubset="scanlinesMain:No scanlines"/>
+			<path ifSubset="scanlinesMain:Light scanlines">./_inc/assets/scanlines.png</path>
+			<path ifSubset="scanlinesMain:Dark scanlines">./_inc/assets/darkscanlines.png</path>
+			<size>1 1</size>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<zIndex>1</zIndex>
+			<linearSmooth>true</linearSmooth>
+		</image>
 
-
-
-
-
-
-
-
-	<video name="backgroundvideo" extra="true">
-		<path>{random}</path>
-		<pos>0.229166666666667 0</pos>
-		<origin>0 0</origin>
-		<size>0.770833333333333 1</size>
-		<delay ifSubset="mainVideoDelay:1 Second">1</delay>
-		<delay ifSubset="mainVideoDelay:2 Seconds">2</delay>
-		<delay ifSubset="mainVideoDelay:5 Seconds">5</delay>
-		<delay ifSubset="mainVideoDelay:Video off">9999</delay>
-		<effect>none</effect>
-		<zIndex>2</zIndex>
-	</video>
-
-	<carousel name="systemcarousel">
-		<scrollSound>./_inc/sound/slide.wav</scrollSound>
-		<type>vertical</type>
-		<pos>0.035 0</pos>
-		<size>0.26 1</size>
-		<logoScale>2</logoScale>
-		<!--<logoSize>0.12 0.12</logoSize>-->
-		<logoSize>0.12 0.12</logoSize>
-		<color>ffffff00</color>
-		<origin>0 0</origin>
-		<logoRotation>-6.5</logoRotation>
-		<logoRotationOrigin>0.5 0.5</logoRotationOrigin>
-		<logoAlignment>left</logoAlignment>
-		<maxLogoCount>3</maxLogoCount>
-		<minLogoOpacity>0.2</minLogoOpacity>
-		<zIndex>3</zIndex>
-		<systemInfoDelay>700</systemInfoDelay>
-		<defaultTransition>fade</defaultTransition>
-	</carousel>
 
+		<video name="backgroundvideo" extra="true">
+			<default>./_inc/system/blank.png</default>
+			<path>{random}</path>
+			
+			<pos>0.229166666666667 0</pos>
+			<origin>0 0</origin>
+			<size>0.770833333333333 1</size>
+			<showSnapshotNoVideo>false</showSnapshotNoVideo>
 
+						<delay ifSubset="mainVideoDelay:1 Second">1</delay>
+			<delay ifSubset="mainVideoDelay:2 Seconds">2</delay>
+						<delay ifSubset="mainVideoDelay:5 Seconds">5</delay>
+			<delay ifSubset="mainVideoDelay:Video off">9999</delay>
+			<effect>none</effect>
+			<zIndex>2</zIndex>
+		</video>
 
 
+		<image name="background2" extra="static">
+			<path>./_inc/assets/overlay.png</path>
+			<size>1 1</size>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<zIndex>3</zIndex>
+			<linearSmooth>true</linearSmooth>
+		</image>
 
 
 
 
 
 
-	<text name="logoText"> <!-- fallbacks for systems with no logo -->
-		<origin>0 0</origin>
-		<pos>0.5 0.5</pos>
-		<size>1 0.8335</size>
-		<fontSize>0.055</fontSize>
-		<lineSpacing>1</lineSpacing>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<alignment>center</alignment>
-		<forceUppercase>false</forceUppercase>
-		<color>ffffff</color>
-		<zIndex>3</zIndex>
-	</text>
 
 
 
+		<carousel name="systemcarousel">
+			<scrollSound>./_inc/sound/slide.wav</scrollSound>
+			<type>vertical</type>
+			<pos>0.035 0</pos>
+			<size>0.26 1</size>
+			<logoScale>2</logoScale>
+			<logoSize>0.12 0.12</logoSize>
+			<color>ffffff00</color>
+			<origin>0 0</origin>
+			<logoRotation>-6.5</logoRotation>
+			<logoRotationOrigin>0.5 0.5</logoRotationOrigin>
+			<logoAlignment>left</logoAlignment>
+			<maxLogoCount>3</maxLogoCount>
+			<minLogoOpacity>0.2</minLogoOpacity>
+			<zIndex>4</zIndex>
+			<systemInfoDelay>700</systemInfoDelay>
+			<defaultTransition>fade</defaultTransition>
+		</carousel>
+
+
+
 
-	<image name="menuBar" extra="static">
-		<path>./_inc/assets/black/menuBar.png</path>
-		<size>0.2604166666666667 1</size>
-		<pos>0 0</pos> <!-- was 0 0 -->
-		<origin>0 0</origin>
-		<zIndex>2</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>
+
 
 
 
 
 
-	<image name="gamemarker" extra="static">
-		<path>./_inc/assets/marker.png</path>
-		<path>./${system.theme}/_inc/marker.png</path>
-		<path ifSubset="artworkregion:JP">./${system.theme}/_inc/marker-jp.png</path>
-		<path ifSubset="artworkregion:US">./${system.theme}/_inc/marker-us.png</path>	
-		<path ifSubset="artworkregion:EU">./${system.theme}/_inc/marker-eu.png</path>	
-		<path ifSubset="artworkregion:MIX">./${system.theme}/_inc/marker.png</path>
-		<size>0.0078125 0.35</size>
-		<pos>0 0.5</pos>
-		<linearSmooth>true</linearSmooth>
-		<origin>0 0.5</origin>
-		<zIndex>3</zIndex>
-	</image> 
+		<text name="logoText"> <!-- fallbacks for systems with no logo -->
+			<origin>0 0</origin>
+			<pos>0.5 0.5</pos>
+			<size>1 0.8335</size>
+			<fontSize>0.055</fontSize>
+			<lineSpacing>1</lineSpacing>
+			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+			<alignment>center</alignment>
+			<forceUppercase>false</forceUppercase>
+			<color>ffffff</color>
+			<zIndex>3</zIndex>
+		</text>
 
 
+
+
+		<image name="menuBar" extra="static">
+			<path>./_inc/assets/black/menuBar.png</path>
+			<size>0.2604166666666667 1</size>
+			<pos>0 0</pos> <!-- was 0 0 -->
+			<origin>0 0</origin>
+			<zIndex>2</zIndex>
+			<linearSmooth>true</linearSmooth>
+		</image>
 
-	<image name="syslogoBG" extra="static">
-		<path>./../_inc/assets/syslogoBG.png</path>
-		<size>0.2291666666666667 0.35</size>
-		<pos>0 0.5</pos>
-		<origin>0 0.5</origin>
-		<zIndex>3</zIndex>
-		<storyboard>
-			<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="1600" begin="600" mode="easeOut"/>
-			<animation property="opacity" from="1" to="0.2" begin="1800" duration="1600" autoReverse="true" repeat="forever" mode="easeInOut"/>
-		</storyboard>
-	</image> 
 
 
-	<image name="primaryBtn" extra="static">
-		<storyboard>
-			<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
-			<animation property="opacity" from="0" to="1" duration="700" begin="500" mode="easeOut"/>
-			<animation property="scale" from="1" to="1.15" begin="700" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
-		</storyboard>
-		<linearSmooth>true</linearSmooth>
-	</image>
 
 
-	<image name="gamemarker" extra="static">
-		<pos>-0.009 0.5</pos>
-		<storyboard>
-			<animation property="x" from="-0.009" to="-0.009" begin="0" duration="200" mode="easeOut"/>
-			<animation property="x" from="-0.009" to="0" begin="200" duration="500" mode="easeOut"/>
-		</storyboard>
-	</image>
+		<image name="gamemarker" extra="static">
+			<path>./_inc/assets/marker.png</path>
+			<path>./${system.theme}/_inc/marker.png</path>
+			<path ifSubset="artworkregion:JP">./${system.theme}/_inc/marker-jp.png</path>
+			<path ifSubset="artworkregion:US">./${system.theme}/_inc/marker-us.png</path>	
+			<path ifSubset="artworkregion:EU">./${system.theme}/_inc/marker-eu.png</path>	
+			<path ifSubset="artworkregion:MIX">./${system.theme}/_inc/marker.png</path>
+			<size>0.0078125 0.35</size>
+			<pos>0 0.5</pos>
+			<linearSmooth>true</linearSmooth>
+			<origin>0 0.5</origin>
+			<zIndex>3</zIndex>
+		</image> 
+
+
+
+		<image name="syslogoBG" extra="static">
+			<path>./../_inc/assets/syslogoBG.png</path>
+			<size>0.2291666666666667 0.35</size>
+			<pos>0 0.5</pos>
+			<origin>0 0.5</origin>
+			<zIndex>3</zIndex>
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="1600" begin="600" mode="easeOut"/>
+				<animation property="opacity" from="1" to="0.2" begin="1800" duration="1600" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+		</image> 
 
+
+		<image name="primaryBtn" extra="static">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="700" begin="500" mode="easeOut"/>
+				<animation property="scale" from="1" to="1.15" begin="700" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+			<linearSmooth>true</linearSmooth>
+		</image>
 
 
+		<image name="gamemarker" extra="static">
+			<pos>-0.009 0.5</pos>
+			<storyboard>
+				<animation property="x" from="-0.009" to="-0.009" begin="0" duration="200" mode="easeOut"/>
+				<animation property="x" from="-0.009" to="0" begin="200" duration="500" mode="easeOut"/>
+			</storyboard>
+		</image>
 
 
+		<text name="systemInfo"> <!-- removed logoText -->)
+			<visible>false</visible>
+			<color>00000000</color>
+		</text>
 
+		<!-- End: Resets -->
+		<!-- Start: System Count -->
+		<text name="system-count,system-count-single,system-count-null" extra="true">
+			<color>ffffff</color>
+			<pos>0.365 0.915</pos>
+			<origin>0 1</origin>
+			<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
+			<fontSize>0.035</fontSize>
+			<alignment>left</alignment>
 
+			<size>0 0.05</size>
 
+			<fontSize>0.041666666666667</fontSize>
+			<color>ffffff</color>
 
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
 
+			</storyboard>
+		</text>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!--<text name="systemInfo">
-
-		<color>ffffff</color>
-		<pos>0.365 0.915</pos>
-		<origin>0 1</origin>
-		<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
-		<fontSize>0.035</fontSize>
-		<alignment>left</alignment>
-		<zIndex>4</zIndex>
-	</text> -->
-
-
-
-
-
-	<text name="systemInfo"> <!-- removed logoText -->)
-		<visible>false</visible>
-		<color>00000000</color>
-	</text>
-
-	<!-- End: Resets -->
-	<!-- Start: System Count -->
-	<text name="system-count,system-count-single,system-count-null" extra="true">
-
-
-		<color>ffffff</color>
-		<pos>0.365 0.915</pos>
-		<origin>0 1</origin>
-		<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
-		<fontSize>0.035</fontSize>
-		<alignment>left</alignment>
-
-		<size>0 0.05</size>
-
-		<fontSize>0.041666666666667</fontSize>
-		<color>ffffff</color>
-
-		<storyboard>
-			<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
-			<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
-
-		</storyboard>
-	</text>
-
-
-
-
-
-	<text name="system-count" extra="true">
-		<text>{system:total} Games available</text>
-		<visible>{system:total} &gt; 1 ? 1 : 0</visible>
-	</text>
-	<text name="system-count-single" extra="true">
-		<text>1 Game available</text>
-		<visible>{system:total} == 1 ? 1 : 0</visible>
-	</text>
-	<text name="system-count-null" extra="true">
-		<text>No games available</text>
-		<visible>{system:total} == 0 ? 1 : 0</visible>
-
-	</text>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- main system help buttons graphic -->
-
-	<!--<image name="system_help" extra="static">
-		<path>./_inc/assets/syshelp.svg</path>
-		<origin>1 1</origin>
-		<pos>0.9463541666666667 0.9462962962962963</pos>
-		<maxSize>1 0.05</maxSize>
-		<zIndex>200</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>-->
-
-	<image name="primaryBtn" extra="true">
-		<linearSmooth>true</linearSmooth>	
-		<origin>0.5 0.734848484848485</origin>
-		<pos>0.2989583333333333 0.89</pos> <!--was 0.2989583333333333 -->
-		<size>0.09 0</size>
-		<zIndex>4</zIndex>
-	</image>
-
-
-	<!--<text name="browseGames" extra="static">
-		<text>Browse games</text>
-		<pos>0.35 0.915</pos>
-		<origin>0 1</origin>
-		<color>ffffff</color>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<fontSize>0.035</fontSize>
-		<alignment>left</alignment>
-		<zIndex>200</zIndex>
-	</text>-->
-
-	<!-- hidden default help system  - NOW VISIBLE-->
-
-	<helpsystem name="help">
-		<origin>1 1</origin>
-		<pos>0 0</pos>
-		<textColor>ffffff</textColor>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<fontSize>0.02</fontSize>    
-		<iconColor>f11c00</iconColor>
-		<horizontalMargin>0.1 0.1</horizontalMargin>
-	</helpsystem>
-
-
-
-
-
-
-
-</view>
-
-
-
-
-
-
-
-
-<view name="detailed, grid">
-	<helpsystem name="help">
-		<pos>-2 -2</pos>
-		<textColor>f11c00</textColor>
-		<iconColor>f11c00</iconColor>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<forceUppercase>false</forceUppercase>
-	</helpsystem> 
-</view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ---------- Detailed layout properties ------ -->
-
-<view name="detailed">
-
-	<image name="scanlines" extra="true">
-		<path ifSubset="scanlines:No scanlines"/>
-		<path ifSubset="scanlines:Light scanlines">./_inc/assets/scanlines.png</path>
-		<path ifSubset="scanlines:Dark scanlines">./_inc/assets/darkscanlines.png</path>
-		<size>1 1</size>
-		<pos>0 0</pos>
-		<origin>0 0</origin>
-		<zIndex>10</zIndex>
-	</image>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-	<text name="md_lbl_genre, md_lbl_rating, md_rating, md_lbl_developer, md_developer, md_lbl_publisher, md_lbl_lastplayed, md_lbl_playcount, md_playcount, md_lbl_players, md_lbl_releasedate">
-		<pos>2</pos>
-		<visible>false</visible>
-	</text>
-
-	<image name="background2" extra="true">
-		<path>./_inc/assets/detailed.png</path>
-		<size>1 1</size>
-		<pos>0 0</pos>
-		<origin>0 0</origin>
-		<zIndex>11</zIndex>
-	</image>
-
-	<!-- help system image element -->
-
-	<!--<image name="list_help" extra="true">
-		<path>./_inc/assets/detailhelp.svg</path>
-		<origin>0.5 0</origin>
-		<pos>0.66 0.91</pos>
-		<maxSize>0.546875 0.05</maxSize>
-		<zIndex>100</zIndex>
-	</image>-->
-
-	<image name="logo">
-		<origin>0 0.5</origin>
-		<pos>0.04 0.13</pos>
-		<maxSize>0.19 1</maxSize> <!-- was 0.145 0.160 -->
-
-		<storyboard>
-			<animation property="x" from="0.042083333333333" begin="300" duration="500" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
-		</storyboard>
-
-
-
-
-	</image>
-
-	<text name="logoText">
-		<origin>0 0</origin>
-		<pos>0.056 0.008</pos>
-		<size>0.16875 0.215740740740741</size>
-		<fontSize>0.035</fontSize>
-		<lineSpacing>1</lineSpacing>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<alignment>left</alignment>
-		<forceUppercase>false</forceUppercase>
-		<color>ffffff</color>
-	</text>
-
-	<textlist name="gamelist">
-		<pos>0 0.25</pos>
-		<origin>0 0</origin>
-		<size>0.325 0.7</size>
-		<selectorColor>424242</selectorColor>
-		<selectedColor>ffffff</selectedColor>
-		<primaryColor>959595</primaryColor>
-		<secondaryColor>959595</secondaryColor>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<fontSize>0.035</fontSize>
-		<alignment>left</alignment>
-		<horizontalMargin>0.02</horizontalMargin>
-		
-		<lines>9</lines>
-		<scrollSound>./_inc/sound/cursor.wav</scrollSound>
-		<scrollbarSize>0.0</scrollbarSize>
-		<storyboard>
-			<!--<animation property="opacity" from="0" to="0"  begin="0" duration="500" mode="linear"/>-->
-			<animation property="opacity" from="0" to="1"  begin="0" duration="500" mode="easeOut"/>
-			<animation property="y" from="0.6" duration="500" mode="easeOut"/>
-			<animation property="opacity" from="1" to="0.6" begin="1000" duration="1000" autoReverse="true" repeat="forever" mode="easeInOut"/>
-		</storyboard>
-	</textlist>
-
-
-
-
-
-	<image name="md_marquee">
-		<pos>0.661458333333333 0.611111111111111</pos>
-		<origin>0.5 1</origin>
-		<maxSize>0.30 1</maxSize>
-		<zIndex>100</zIndex>
-
-
-		<storyboard>
-			<animation property="y" from="0.63" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" begin="500"  duration="600" mode="easeOut"/>
-		</storyboard>
-	</image>
-
-
-	<rating name="md_rating">
-		<pos>-3 -3</pos>
-	</rating>
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<image name="meta-genre" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.495 0.6638888888888889</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-genre.svg</path>
-		<path>./${system.theme}/_inc/meta-genre.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-
-		<storyboard>
-			<animation property="y" from="0.71" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="600" mode="easeOut"/>
-		</storyboard>
-	</image>
-
-
-
-	<text name="md_genre">
-		<origin>0.5 0</origin>
-		<pos>0.495 0.7231481481481481</pos>
-		<size>0.15 0.034259259259259</size>
-		<alignment>center</alignment>
-		<color>B3B3B3</color>
-		<fontSize>0.025</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-		<storyboard>
-			<animation property="y" from="0.75" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="600" mode="easeOut"/>
-		</storyboard>
-	</text>
-
-
-	<!--<image name="meta-players" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.6106875 0.6638888888888889</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-players.svg</path>
-		<path>./${system.theme}/_inc/meta-players.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
-
-
-	<text name="md_players">
-		<origin>0.5 0</origin>
-		<pos>0.6106875 0.7231481481481481</pos>
-		<size>0.0625 0.034259259259259</size>
-		<alignment>center</alignment>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text>-->
-
-
-	
-
-
-
-
-	<image name="meta-publisher" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.6635 0.6638888888888889</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-publisher.svg</path>
-		<path>./${system.theme}/_inc/meta-publisher.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-
-		<storyboard>
-			<animation property="y" from="0.71" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="600" mode="easeOut"/>
-		</storyboard>
-	</image>
-
-
-	<text name="md_publisher">
-		<origin>0.5 0</origin>
-		<pos>0.6635 0.7231481481481481</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<fontSize>0.025</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<alignment>center</alignment>
-
-		<storyboard>
-			<animation property="y" from="0.75" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="600" mode="easeOut"/>
-		</storyboard>
-	</text>
-
-
-
-
-
-
-	<image name="meta-date" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.83 0.6638888888888889</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-date.svg</path>
-		<path>./${system.theme}/_inc/meta-date.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-
-		<storyboard>
-			<animation property="y" from="0.71" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="600" mode="easeOut"/>
-		</storyboard>
-	</image>
-
-
-	<datetime name="md_releasedate">
-		<origin>0.5 0</origin>
-		<pos>0.83 0.7231481481481481</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<fontSize>0.025</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<format>%Y</format>
-		<alignment>center</alignment>
-
-		<storyboard>
-			<animation property="y" from="0.75" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" duration="500" begin="600" mode="easeOut"/>
-		</storyboard>
-	</datetime>
-
-
-	<!--<image name="dividers" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.66303125 0.6638888888888889</pos>
-		<size>0.2098958333333333 0.0462962962962963</size>
-		<path>./_inc/assets/dividers.svg</path>
-		<zIndex>99</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>-->
-
-
-	<text name="md_description">
-		<origin>0 0</origin>
-		<color>B3B3B3</color>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<fontSize>0.035</fontSize>
-		<alignment>center</alignment>
-		<size>0.50 0.16</size> <!-- W,H -->
-		<pos>0.41 0.80</pos>
-		<emptyTextDefaults>none</emptyTextDefaults>
-		<verticalAlignment>top</verticalAlignment>
-		<autoScroll>vertical</autoScroll>
-		<autoScrollDelay>2000</autoScrollDelay>
-		<autoScrollSpeed>50</autoScrollSpeed>
-
-
-		<storyboard>
-			<animation property="y" from="0.82" begin="500" duration="600" mode="easeOut"/>
-			<animation property="opacity" from="0" to="0" duration="1" mode="linear"/>
-			<animation property="opacity" from="0" to="1" begin="500" duration="600" mode="easeOut"/>
-		</storyboard>
-
-
-
-	</text>
-
-
-
-	<video name="md_video">
-		<pos>0.322916666666667 0.6740740740740741</pos>
-		<maxSize>0.677083333333333 3</maxSize>
-		<zIndex>9</zIndex>
-		<origin>0 1</origin>
-		<delay ifSubset="systemVideoDelay:1 Second">1</delay>
-		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
-		<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
-		<delay ifSubset="systemVideoDelay:Video off">9999</delay>
-		<showSnapshotNoVideo>true</showSnapshotNoVideo>
-		<showSnapshotDelay>true</showSnapshotDelay>
-		<effect>none</effect>
-		<loops>10</loops>
-	</video>
-</view>
-
-
-
-
-
-
-
-
-
-
-
-<!-- --- detailed plus boxart view -->
-
-
-<!-- -- disabled at alpha --- -->
+		<text name="system-count" extra="true">
+			<text>{system:total} Games available</text>
+			<visible>{system:total} &gt; 1 ? 1 : 0</visible>
+		</text>
+		<text name="system-count-single" extra="true">
+			<text>1 Game available</text>
+			<visible>{system:total} == 1 ? 1 : 0</visible>
+		</text>
+		<text name="system-count-null" extra="true">
+			<text>No games available</text>
+			<visible>{system:total} == 0 ? 1 : 0</visible>
+
+		</text>
+
+
+
+		<image name="primaryBtn" extra="true">
+			<linearSmooth>true</linearSmooth>	
+			<origin>0.5 0.734848484848485</origin>
+			<pos>0.2989583333333333 0.89</pos>
+			<size>0.09 0</size>
+			<zIndex>4</zIndex>
+		</image>
+
+		<!-- hidden default help system  - NOW VISIBLE-->
+
+		<helpsystem name="help">
+			<origin>1 1</origin>
+			<pos>0 0</pos>
+			<textColor>ffffff</textColor>
+			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+			<fontSize>0.02</fontSize>    
+			<iconColor>f11c00</iconColor>
+			<horizontalMargin>0.1 0.1</horizontalMargin>
+		</helpsystem>
+
+
+	</view>
+
+
+
+	<view name="detailed, grid">
+		<helpsystem name="help">
+			<pos>-2 -2</pos>
+			<textColor>f11c00</textColor>
+			<iconColor>f11c00</iconColor>
+			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+			<forceUppercase>false</forceUppercase>
+		</helpsystem> 
+	</view>
+
+
+
+	<!-- ---------- Detailed layout properties ------ -->
+
+	<view name="detailed">
+
+		<image name="scanlines" extra="true">
+			<path ifSubset="scanlines:No scanlines"/>
+			<path ifSubset="scanlines:Light scanlines">./_inc/assets/scanlines.png</path>
+			<path ifSubset="scanlines:Dark scanlines">./_inc/assets/darkscanlines.png</path>
+			<size>1 1</size>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<zIndex>10</zIndex>
+		</image>
+
+
+
+		<text name="md_lbl_genre, md_lbl_rating, md_rating, md_lbl_developer, md_developer, md_lbl_publisher, md_lbl_lastplayed, md_lbl_playcount, md_playcount, md_lbl_players, md_lbl_releasedate">
+			<pos>2</pos>
+			<visible>false</visible>
+		</text>
+
+		<image name="background2" extra="true">
+			<path>./_inc/assets/black/detailed.png</path>
+			<size>1 1</size>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<zIndex>11</zIndex>
+		</image>
+
+
+		<image name="logo">
+			<origin>0 0.5</origin>
+			<pos>0.04 0.13</pos>
+			<maxSize>0.19 1</maxSize>
+
+			<storyboard>
+				<animation property="x" from="0.042083333333333" begin="300" duration="500" mode="easeOut"/>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
+			</storyboard>
+		</image>
+
+
+		<text name="logoText">
+			<origin>0 0</origin>
+			<pos>0.056 0.008</pos>
+			<size>0.16875 0.215740740740741</size>
+			<fontSize>0.035</fontSize>
+			<lineSpacing>1</lineSpacing>
+			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+			<alignment>left</alignment>
+			<forceUppercase>false</forceUppercase>
+			<color>ffffff</color>
+		</text>
+
+		<textlist name="gamelist">
+			<pos>0 0.25</pos>
+			<origin>0 0</origin>
+			<size>0.325 0.7</size>
+			<selectorColor>424242</selectorColor>
+			<selectedColor>ffffff</selectedColor>
+			<primaryColor>959595</primaryColor>
+			<secondaryColor>959595</secondaryColor>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			<fontSize>0.035</fontSize>
+			<alignment>left</alignment>
+			<horizontalMargin>0.04</horizontalMargin>
+			
+			<lines>9</lines>
+			<scrollSound>./_inc/sound/cursor.wav</scrollSound>
+			<scrollbarSize>0.0</scrollbarSize>
+			<storyboard>
+				<animation property="opacity" from="0" to="1"  begin="0" duration="500" mode="easeOut"/>
+				<animation property="y" from="0.6" duration="500" mode="easeOut"/>
+				<animation property="opacity" from="1" to="0.6" begin="1000" duration="1000" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+		</textlist>
+
+
+		<image name="md_marquee">
+			<pos>0.661458333333333 0.59</pos>
+			<origin>0.5 1</origin>
+			<maxSize>0.30 1</maxSize>
+			<zIndex>100</zIndex>
+		</image>
+
+
+		<rating name="md_rating">
+			<visibility>false</visibility>
+		</rating>
+
+
+		<container name="metas">
+			<size>1 1</size> 
+			<origin>0 0</origin>
+			<!--<pos>-0.35 0.03</pos>-->
+			<pos>-0.03 0.2</pos>
+			<zIndex>1900</zIndex>
+
+
+			<image name="meta-genre" extra="true">
+				<origin>0 0</origin>
+				<pos>0.5 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-genre.svg</path>
+				<path>./${system.theme}/_inc/meta-genre.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
+
+			<text name="metagenre" extra="true">
+				<text>{game:genre}</text>
+				<origin>0 0</origin>
+				<pos>0.5 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<alignment>center</alignment>
+				<color>B3B3B3</color>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
+
+
+			<image name="meta-players" extra="true">
+				<origin>0 0</origin>
+				<pos>0.6046875 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-players.svg</path>
+				<path>./${system.theme}/_inc/meta-players.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
+
+
+
+			<text name="players" extra="true">
+				<text>{game:players}</text>
+				<origin>0 0</origin>
+				<pos>0.6046875 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<alignment>center</alignment>
+				<color>B3B3B3</color>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
+
+
+
+			<image name="meta-publisher" extra="true">
+				<origin>0 0</origin>
+				<pos>0.709375 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-publisher.svg</path>
+				<path>./${system.theme}/_inc/meta-publisher.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
+
+
+
+			<text name="publisher" extra="true">
+				<text>{game:publisher}</text>
+				<origin>0 0</origin>
+				<pos>0.709375 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<color>B3B3B3</color>
+				<alignment>center</alignment>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
+
+
+			<image name="date" extra="true">
+				<origin>0 0</origin>
+				<pos>0.8140625 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-date.svg</path>
+				<path>./${system.theme}/_inc/meta-date.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
+
+
+			<text name="releasedate" extra="true">
+				<text>{game:releaseyear}</text>
+				<origin>0 0</origin>
+				<pos>0.8140625 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<color>B3B3B3</color>
+				<alignment>center</alignment>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+
+			</text>
+
+
+			<image name="dividers" extra="true">
+				<origin>0 0</origin>
+				<pos>0.5833333333333333 0.4429444444444444</pos>
+				<size>0.2098958333333333 0.0462962962962963</size>
+				<path>./_inc/assets/dividers.svg</path>
+				<zIndex>99</zIndex>
+				<linearSmooth>true</linearSmooth>
+			</image>
+		</container>
+
+		<text name="md_description">
+			<origin>0 0</origin>
+			<color>B3B3B3</color>
+			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+			<fontSize>0.035</fontSize>
+			<alignment>center</alignment>
+			<size>0.50 0.16</size> <!-- W,H -->
+			<pos>0.41 0.78</pos>
+			<emptyTextDefaults>none</emptyTextDefaults>
+			<verticalAlignment>top</verticalAlignment>
+			<autoScroll>vertical</autoScroll>
+			<autoScrollDelay>2000</autoScrollDelay>
+			<autoScrollSpeed>50</autoScrollSpeed>
+		</text>
+
+
+
+		<video name="md_video">
+			<pos>0.322916666666667 0.6740740740740741</pos>
+			<maxSize>0.677083333333333 3</maxSize>
+			<zIndex>9</zIndex>
+			<origin>0 1</origin>
+			<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+			<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+			<delay ifSubset="systemVideoDelay:1 Second">1</delay>
+			<delay ifSubset="systemVideoDelay:Video off">9999</delay>
+			<showSnapshotNoVideo>true</showSnapshotNoVideo>
+			<showSnapshotDelay>true</showSnapshotDelay>
+			<effect>none</effect>
+			<loops>10</loops>
+			<storyboard event="activate">
+				<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
+			</storyboard>
+			<storyboard event="deactivate">
+				<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
+			</storyboard>
+		</video>
+
+	</view>
+
+
+
+
+
+
+
+	<!-- --- detailed plus boxart view -->
+
+
+	<!-- -- disabled at alpha --- -->
 <!--
 <customView name="detailed BoxArt" inherits="detailed">
 
@@ -1222,26 +969,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		<maxSize>0.125 0.12</maxSize>
 	</image>
 
-	<!--<text name="logoText">
-		<fontSize>0.035</fontSize>
-		<lineSpacing>1</lineSpacing>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<alignment>left</alignment>
-		<forceUppercase>false</forceUppercase>
-		<color>ffffff</color>
-		<pos>0.055 0.105</pos>
-		<zIndex>31</zIndex>
-	</text>-->
-
-	<!--<image name="grid_help" extra="true">
-		<origin>1 1</origin>
-		<path>./_inc/assets/gridhelp.svg</path>
-		<pos>0.9463541666666667 0.9601851851851852</pos>
-		<maxSize>0.546875 0.05</maxSize>
-		<zIndex>100</zIndex>
-	</image>-->
-
-
 	<!-- this is the tint image overlay that provides clarity over the video BG -->
 
 	<image name="gridOverlay" extra="true">
@@ -1290,24 +1017,13 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	</gridtile>   
 
 	<text name="gridtile">
-		<visible>false</visible> <!-- hides the game title from displaying underneath the grid item -->
-		<color>ffffff</color>
-		<backgroundColor>00000000</backgroundColor>
-		<fontSize>0.018</fontSize>
-		<forceUppercase>false</forceUppercase>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<alignment>center</alignment>
+		<visible>false</visible>
 	</text>
 
 
 	<text name="gridtile" if="{system.theme} == 'retrobat'|| {system.theme} == 'flatpak'|| {system.theme} == 'imageviewer'">
 		<visible>true</visible>
 	</text>
-
-
-
-
-
 
 	<text name="md_name">
 		<pos>0.9463541666666667 0.12</pos>
@@ -1345,13 +1061,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	<video name="md_video">
 		<linearSmooth>true</linearSmooth>	
 		<pos>0 -0.25</pos>
-		<!--      <size>1 1</size>      -->
 		<maxSize>1 3</maxSize>
 		<zIndex>6</zIndex>
 		<origin>0 0</origin>
-		<delay ifSubset="systemVideoDelay:1 Second">2</delay>
-		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
 		<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+		<delay ifSubset="systemVideoDelay:1 Second">1</delay>
 		<delay ifSubset="systemVideoDelay:Video off">9999</delay>
 		<showSnapshotNoVideo>true</showSnapshotNoVideo>
 		<showSnapshotDelay>true</showSnapshotDelay>
@@ -1366,39 +1081,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		<showSnapshotDelay>false</showSnapshotDelay>
 		<effect>none</effect>
 	</video>
-
-
-	<!-- ----- Button positions ------ -->
-
-	<!--<image name="primaryBtn" extra="true">
-		<linearSmooth>true</linearSmooth>	
-		<pos>0.052083333333333 0.7972222222222222</pos>
-		<size>0.036458333333333 0.122222222222222</size>
-		<zIndex>100</zIndex>
-	</image>
-
-	<image name="selectTxt" extra="true">
-		<pos>0.051375 0.925</pos>
-		<size>0.036458333333333 0.02037037037037</size>
-		<path>./_inc/assets/selectTxt.png</path>
-		<zIndex>100</zIndex>
-	</image>
-
-	<image name="secondaryBtn" extra="true">
-		<linearSmooth>true</linearSmooth>	
-		<pos>0.091666666666667 0.7972222222222222</pos>
-		<size>0.036458333333333 0.122222222222222</size>
-		<zIndex>100</zIndex>
-	</image>
-
-	<image name="backTxt" extra="true">
-		<pos>0.0909583333333333 0.925</pos>
-		<size>0.036458333333333 0.02037037037037</size>
-		<path>./_inc/assets/backTxt.png</path>
-		<zIndex>100</zIndex>
-	</image>
-
--->
 
 </view>
 
@@ -1418,10 +1100,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		<scrollLoop>true</scrollLoop>
 		<pos>0 0.14</pos>
 
-		<!--<pos if="{system.theme} == 'gb' || {system.theme} == 'gb2players' ">0 0.07</pos>-->
-
 		<size>1 0.55</size>
-		<!--<size if="{system.theme} == 'gb' || {system.theme} == 'gb2players'  || {system.theme} == 'fds' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players'">1 0.65</size>-->
 
 		<margin>0 0</margin>
 		<autoLayout>5 1</autoLayout>
@@ -1491,10 +1170,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 			</image>
 
 
-
-
-
-
 			<text name="md_name">
 				<pos>0.5 0.75</pos>
 				<size>0.99 0.055555555555556</size>
@@ -1506,26 +1181,15 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 				<zIndex>100</zIndex>
 			</text>
 
-
-
-
 			<text name="md_publisher">
 				<visible>false</visible>
 			</text>
-
-
-
-
-
-
 
 			<container name="metas">
 				<size>1 1</size> 
 				<origin>0 0</origin>
 				<pos>0 0.02</pos>
 				<zIndex>1900</zIndex>
-
-
 
 				<image name="meta-genre" extra="true">
 					<origin>0.5 0</origin>
@@ -1718,311 +1382,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
  </stackpanel>
 -->
 
-		</customView>
-
-
-
-
-
-
-		<!-- ---- Tiles view ---- -->
-
-		<customView name="Tiles" inherits="grid">
-
-			<image name="gridOverlay" extra="true">
-				<path>./_inc/assets/black/tileoverlay.png</path>
-				<size>1 1</size>
-				<pos>1 1</pos>
-				<origin>1 1</origin>
-				<zIndex>8</zIndex>
-			</image>
-
-
-			<imagegrid name="gamegrid">
-				<autoLayout>4 3</autoLayout>
-				<autoLayoutSelectedZoom>1</autoLayoutSelectedZoom>
-				<scrollLoop>true</scrollLoop>
-				<imageSource>image</imageSource>
-				<margin>0.00625 0.011111111111111</margin>
-				<size>0.895833333333333 0.68</size>
-				<pos>0.052083333333333 0.23</pos>
-				<animateSelection>true</animateSelection>
-				<zIndex>10</zIndex>
-				<scrollSound>./_inc/sound/cursor.wav</scrollSound>
-				<showVideoAtDelay>-1</showVideoAtDelay>
-			</imagegrid>
-
-		<!--	<image name="grid_help" extra="true">
-				<path>./_inc/assets/gridhelp.svg</path>
-				<origin>1 1</origin>
-				<pos>0.9463541666666667 0.5175925925925926</pos>
-				<maxSize>0.546875 0.05</maxSize>
-				<zIndex>100</zIndex>
-			</image>
-
-
-			<image name="primaryBtn" extra="true">
-				<linearSmooth>true</linearSmooth>	
-				<pos>0.052083333333333 0.3546481481481481</pos>
-				<size>0.036458333333333 0.122222222222222</size>
-				<zIndex>100</zIndex>
-			</image>
-
-			<image name="selectTxt" extra="true">
-				<pos>0.052083333333333 0.4828518518518519</pos>
-				<size>0.036458333333333 0.02037037037037</size>
-				<path>./_inc/assets/selectTxt.png</path>
-				<zIndex>100</zIndex>
-			</image>
-
-			<image name="secondaryBtn" extra="true">
-				<linearSmooth>true</linearSmooth>	
-				<pos>0.091666666666667 0.3546481481481481</pos>
-				<size>0.036458333333333 0.122222222222222</size>
-				<zIndex>100</zIndex>
-			</image>
-
-
-			<image name="backTxt" extra="true">
-				<pos>0.091666666666667 0.4828518518518519</pos>
-				<size>0.036458333333333 0.02037037037037</size>
-				<path>./_inc/assets/backTxt.png</path>
-				<zIndex>100</zIndex>
-			</image> -->
-
-			<video name="md_video">
-
-				<origin>0.5 0</origin>
-				<pos>0.5 -0.15</pos>
-				<!--<size>1 1</size>-->
-				<maxSize>1 3</maxSize>
-				<zIndex>6</zIndex>
-				<delay ifSubset="systemVideoDelay:1 Second">1</delay>
-				<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
-				<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
-				<delay ifSubset="systemVideoDelay:Video off">9999</delay>
-				<showSnapshotNoVideo>true</showSnapshotNoVideo>
-				<showSnapshotDelay>true</showSnapshotDelay>
-				<loops>10</loops>
-				<effect>none</effect>
-				<linearSmooth>true</linearSmooth>
-			</video>
-
-
-			<gridtile name="default">
-				<backgroundCenterColor>40404080</backgroundCenterColor>
-				<backgroundEdgeColor>00000000</backgroundEdgeColor>
-				<padding>4 4</padding>
-				<imageSizeMode>minSize</imageSizeMode>
-				<backgroundCornerSize>0 0</backgroundCornerSize>
-				<backgroundColor>42424200</backgroundColor>
-				<imageColor>6d6d6dFF</imageColor>
-			</gridtile>
-
-
-			<gridtile name="selected">
-				<padding>4 4</padding>
-				<imageColor>ffffffff</imageColor>
-				<backgroundCornerSize>0</backgroundCornerSize>
-				<backgroundEdgeColor>909090</backgroundEdgeColor>
-			</gridtile>
-
-			<image name="gridtile.image">
-				<roundCorners>0</roundCorners>
-			</image>
-
-			<image name="gridtile.marquee">
-				<color>dadadaff</color>
-				<pos>0.5 0.5</pos>
-				<origin>0.5 0.5</origin>
-				<size>0.60 0.60</size>
-			</image>
-
-			<image name="gridtile.marquee:selected">
-				<color>FFFFFFFF</color>
-				<size>0.70 0.70</size>
-			</image>
-
-			<image name="gridtile.marquee:videoplaying">
-				<color>FFFFFFA0</color>
-				<pos>0.5 0.50</pos>
-				<size>0.60 0.60</size>
-			</image>
-
-	<!--<image name="md_marquee">
-		<pos>0.5 0.162037037037037</pos>
-		<origin>0.5 0.5</origin>
-		<maxSize>0.25 0.2</maxSize>
-		<zIndex>100</zIndex>
-	</image>
--->
-
-
-
-<text name="md_name">
-	<pos>0.9463541666666667 0.12</pos>
-	<size>0.720833333333333 0.055555555555556</size>
-	<origin>1 1</origin>
-	<alignment>right</alignment>
-	<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-	<fontSize>0.055</fontSize>
-	<color>ffffffff</color>
-	<zIndex>100</zIndex>
-</text>
-
-
-<text name="md_publisher">
-	<pos>0.9463541666666667 0.16</pos>
-	<origin>1 1</origin>
-	<size>0.4 0.034259259259259</size>
-	<color>B3B3B3</color>
-	<fontSize>0.035</fontSize>
-	<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	<alignment>right</alignment>
-</text>
-
-
-
-
-
-
-
-
-
-<text name="md_developer">
-	<visible>false</visible>
-</text>
-
-	<!--<image name="meta-genre" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.34296875 0.4157407407407407</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-genre.svg</path>
-		<path>./${system.theme}/_inc/meta-genre.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
-
-
-	<text name="md_genre">
-		<origin>0.5 0</origin>
-		<pos>0.34296875 0.475</pos>
-		<size>0.0625 0.034259259259259</size>
-		<alignment>center</alignment>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text> 
-
-
-	<image name="meta-players" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.44765625 0.4157407407407407</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-players.svg</path>
-		<path>./${system.theme}/_inc/meta-players.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
-
-
-	<text name="md_players">
-		<origin>0.5 0</origin>
-		<pos>0.44765625 0.475</pos>
-		<size>0.0625 0.034259259259259</size>
-		<alignment>center</alignment>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text>
-
-
-	<image name="meta-publisher" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.55234375 0.4157407407407407</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-publisher.svg</path>
-		<path>./${system.theme}/_inc/meta-publisher.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
-
-
-	<text name="md_publisher">
-		<origin>0.5 0</origin>
-		<pos>0.55234375 0.475</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<alignment>center</alignment>
-	</text>
-
-
-	<image name="meta-date" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.65703125 0.4157407407407407</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-date.svg</path>
-		<path>./${system.theme}/_inc/meta-date.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
-
-
-	<datetime name="md_releasedate">
-		<origin>0.5 0</origin>
-		<pos>0.65703125 0.475</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<format>%Y</format>
-		<alignment>center</alignment>
-	</datetime>
-
-
-	<image name="dividers" extra="true">
-		<origin>0.5 0</origin>
-		<pos>0.5 0.4157407407407407</pos>
-		<size>0.2098958333333333 0.0462962962962963</size>
-		<path>./_inc/assets/dividers.svg</path>
-		<zIndex>99</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>
-
--->
-
-
-	<!--<text name="md_description">
-		<color>ffffff</color>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<fontSize>0.016</fontSize>
-		<alignment>center</alignment>
-		<size>0.336458333333333 0.094444444444444</size>
-		<pos>0.332291666666667 0.287037037037037</pos>
-	</text> 
--->
-
-<text name="gridtile">
-	<visible>true</visible>
-	<pos>0 0</pos>
-	<size>1 1</size>
-	<fontPath>./../_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
-	<fontSize>0.018</fontSize>
-	<lineSpacing>1.15</lineSpacing>
-	<alignment>center</alignment>
-	<singleLineScroll>false</singleLineScroll>
-	<padding>0 0</padding>      
-	<backgroundColor>00000000</backgroundColor>
-	<glowSize>3</glowSize>
-	<visible>false</visible>
-</text>
-
-<text name="logoText">
-	<size>0.16875 0.215740740740741</size>
-</text>
-
 </customView>
 
 
@@ -2030,33 +1389,158 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 
 
 
+<!-- ---- Tiles view ---- -->
+
+<customView name="Tiles" inherits="grid">
+
+	<image name="gridOverlay" extra="true">
+		<path>./_inc/assets/black/tileoverlay.png</path>
+		<size>1 1</size>
+		<pos>1 1</pos>
+		<origin>1 1</origin>
+		<zIndex>8</zIndex>
+	</image>
+
+
+	<imagegrid name="gamegrid">
+		<autoLayout>4 3</autoLayout>
+		<autoLayoutSelectedZoom>1</autoLayoutSelectedZoom>
+		<scrollLoop>true</scrollLoop>
+		<imageSource>image</imageSource>
+		<margin>0.00625 0.011111111111111</margin>
+		<size>0.895833333333333 0.68</size>
+		<pos>0.052083333333333 0.23</pos>
+		<animateSelection>true</animateSelection>
+		<zIndex>10</zIndex>
+		<scrollSound>./_inc/sound/cursor.wav</scrollSound>
+		<showVideoAtDelay>-1</showVideoAtDelay>
+	</imagegrid>
+
+	<video name="md_video">
+
+		<origin>0.5 0</origin>
+		<pos>0.5 -0.15</pos>
+		<!--<size>1 1</size>-->
+		<maxSize>1 3</maxSize>
+		<zIndex>6</zIndex>
+		<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+		<delay ifSubset="systemVideoDelay:1 Second">1</delay>
+		<delay ifSubset="systemVideoDelay:Video off">9999</delay>
+		<showSnapshotNoVideo>true</showSnapshotNoVideo>
+		<showSnapshotDelay>true</showSnapshotDelay>
+		<loops>10</loops>
+		<effect>none</effect>
+		<linearSmooth>true</linearSmooth>
+	</video>
+
+
+	<gridtile name="default">
+		<backgroundCenterColor>40404080</backgroundCenterColor>
+		<backgroundEdgeColor>00000000</backgroundEdgeColor>
+		<padding>4 4</padding>
+		<imageSizeMode>minSize</imageSizeMode>
+		<backgroundCornerSize>0 0</backgroundCornerSize>
+		<backgroundColor>42424200</backgroundColor>
+		<imageColor>6d6d6dFF</imageColor>
+	</gridtile>
+
+
+	<gridtile name="selected">
+		<padding>4 4</padding>
+		<imageColor>ffffffff</imageColor>
+		<backgroundCornerSize>0</backgroundCornerSize>
+		<backgroundEdgeColor>909090</backgroundEdgeColor>
+	</gridtile>
+
+	<image name="gridtile.image">
+		<roundCorners>0</roundCorners>
+	</image>
+
+	<image name="gridtile.marquee">
+		<color>dadadaff</color>
+		<pos>0.5 0.5</pos>
+		<origin>0.5 0.5</origin>
+		<size>0.60 0.60</size>
+	</image>
+
+	<image name="gridtile.marquee:selected">
+		<color>FFFFFFFF</color>
+		<size>0.70 0.70</size>
+	</image>
+
+	<image name="gridtile.marquee:videoplaying">
+		<color>FFFFFFA0</color>
+		<pos>0.5 0.50</pos>
+		<size>0.60 0.60</size>
+	</image>
+
+
+	<text name="md_name">
+		<pos>0.9463541666666667 0.12</pos>
+		<size>0.720833333333333 0.055555555555556</size>
+		<origin>1 1</origin>
+		<alignment>right</alignment>
+		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+		<fontSize>0.055</fontSize>
+		<color>ffffffff</color>
+		<zIndex>100</zIndex>
+	</text>
+
+
+	<text name="md_publisher">
+		<pos>0.9463541666666667 0.16</pos>
+		<origin>1 1</origin>
+		<size>0.4 0.034259259259259</size>
+		<color>B3B3B3</color>
+		<fontSize>0.035</fontSize>
+		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+		<alignment>right</alignment>
+	</text>
+
+
+	<text name="md_developer">
+		<visible>false</visible>
+	</text>
+
+	<text name="gridtile">
+		<visible>true</visible>
+		<pos>0 0</pos>
+		<size>1 1</size>
+		<fontPath>./../_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
+		<fontSize>0.018</fontSize>
+		<lineSpacing>1.15</lineSpacing>
+		<alignment>center</alignment>
+		<singleLineScroll>false</singleLineScroll>
+		<padding>0 0</padding>      
+		<backgroundColor>00000000</backgroundColor>
+		<glowSize>3</glowSize>
+		<visible>false</visible>
+	</text>
+
+	<text name="logoText">
+		<size>0.16875 0.215740740740741</size>
+	</text>
+
+</customView>
 
 
 <!-- ------- Boxes and Info layout ------------ -->
 
 
-<!--- -- disabled at alpha -- -->
 
-<!--
 <customView name="Boxes+Info" inherits="grid">
 
-	<image name="md_marquee">
-		<pos>0.5692708333333333 0.5416666666666667</pos>
-		<origin>0 1</origin>
-		<maxSize>0.20 0.15</maxSize>
-		<zIndex>100</zIndex>
-	</image>
 
 
-	<text name="md_name">
+	<text name="md_name, md_publisher">
 		<visible>false</visible>
 	</text>
 
-
 	<imagegrid name="gamegrid">
-		<pos>0.0458333333333333 0.199074074074074</pos>
-		<size>0.4947916666666667 0.618</size>
-		<autoLayout>4 2</autoLayout>
+		<pos>0.03 0.199074074074074</pos>
+		<size>0.46 0.68</size>
+		<autoLayout>3 2</autoLayout>
 
 		<autoLayout if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd'">3 3</autoLayout>
 
@@ -2071,115 +1555,150 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	</imagegrid>
 
 
-	<image name="meta-genre" extra="true">
+
+
+	<container name="metas">
+		<size>1 1</size> 
 		<origin>0 0</origin>
-		<pos>0.5692708333333333 0.5805555555555556</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-genre.svg</path>
-		<path>./${system.theme}/_inc/meta-genre.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
+		<!--<pos>-0.35 0.03</pos>-->
+		<pos>0.02 0.045</pos>
+		<zIndex>1900</zIndex>
 
 
-	<image name="dividers" extra="true">
-		<origin>0 0</origin>
-		<pos>0.6526041666666667 0.5805555555555556</pos>
-		<size>0.2098958333333333 0.0462962962962963</size>
-		<path>./_inc/assets/dividers.svg</path>
-		<zIndex>99</zIndex>
-		<linearSmooth>true</linearSmooth>
-	</image>
+		<image name="meta-genre" extra="true">
+			<origin>0 0</origin>
+			<pos>0.5 0.443037037037037</pos>
+			<size>0.0625 0.0740740740740741</size>
+			<path>./_inc/assets/meta-genre.svg</path>
+			<path>./${system.theme}/_inc/meta-genre.svg</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+		</image>
+
+		<text name="metagenre" extra="true">
+			<text>{game:genre}</text>
+			<origin>0 0</origin>
+			<pos>0.5 0.5013703703703704</pos>
+			<size>0.0625 0.034259259259259</size>
+			<alignment>center</alignment>
+			<color>B3B3B3</color>
+			<fontSize>0.025</fontSize>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+		</text>
+
+
+		<image name="meta-players" extra="true">
+			<origin>0 0</origin>
+			<pos>0.6046875 0.443037037037037</pos>
+			<size>0.0625 0.0740740740740741</size>
+			<path>./_inc/assets/meta-players.svg</path>
+			<path>./${system.theme}/_inc/meta-players.svg</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+		</image>
 
 
 
-	<image name="meta-players" extra="true">
-		<origin>0 0</origin>
-		<pos>0.6739583333333333 0.5805555555555556</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-players.svg</path>
-		<path>./${system.theme}/_inc/meta-players.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
+		<text name="players" extra="true">
+			<text>{game:players}</text>
+			<origin>0 0</origin>
+			<pos>0.6046875 0.5013703703703704</pos>
+			<size>0.0625 0.034259259259259</size>
+			<alignment>center</alignment>
+			<color>B3B3B3</color>
+			<fontSize>0.025</fontSize>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+		</text>
 
 
-	<image name="meta-publisher" extra="true">
-		<origin>0 0</origin>
-		<pos>0.7786458333333333 0.5805555555555556</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-publisher.svg</path>
-		<path>./${system.theme}/_inc/meta-publisher.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
+
+		<image name="meta-publisher" extra="true">
+			<origin>0 0</origin>
+			<pos>0.709375 0.443037037037037</pos>
+			<size>0.0625 0.0740740740740741</size>
+			<path>./_inc/assets/meta-publisher.svg</path>
+			<path>./${system.theme}/_inc/meta-publisher.svg</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+		</image>
 
 
-	<image name="meta-date" extra="true">
-		<origin>0 0</origin>
-		<pos>0.8833333333333333 0.5805555555555556</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-date.svg</path>
-		<path>./${system.theme}/_inc/meta-date.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-		<alignment>center</alignment>
-	</image>
+
+		<text name="publisher" extra="true">
+			<text>{game:publisher}</text>
+			<origin>0 0</origin>
+			<pos>0.709375 0.5013703703703704</pos>
+			<size>0.0625 0.034259259259259</size>
+			<color>B3B3B3</color>
+			<alignment>center</alignment>
+			<fontSize>0.025</fontSize>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+		</text>
 
 
-	<text name="md_genre">
-		<origin>0 0</origin>
-		<pos>0.5692708333333333 0.637962962962963</pos>
-		<size>0.0625 0.034259259259259</size>
-		<alignment>center</alignment>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text> 
+		<image name="date" extra="true">
+			<origin>0 0</origin>
+			<pos>0.8140625 0.443037037037037</pos>
+			<size>0.0625 0.0740740740740741</size>
+			<path>./_inc/assets/meta-date.svg</path>
+			<path>./${system.theme}/_inc/meta-date.svg</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+		</image>
 
 
-	<text name="md_players">
-		<origin>0 0</origin>
-		<pos>0.6739583333333333 0.637962962962963</pos>
-		<size>0.0625 0.034259259259259</size>
-		<alignment>center</alignment>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text>
+		<text name="releasedate" extra="true">
+			<text>{game:releaseyear}</text>
+			<origin>0 0</origin>
+			<pos>0.8140625 0.5013703703703704</pos>
+			<size>0.0625 0.034259259259259</size>
+			<color>B3B3B3</color>
+			<alignment>center</alignment>
+			<fontSize>0.025</fontSize>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+
+		</text>
 
 
-	<text name="md_publisher">
-		<origin>0 0</origin>
-		<pos>0.7786458333333333 0.637962962962963</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<alignment>center</alignment>
-	</text>
+		<image name="dividers" extra="true">
+			<origin>0 0</origin>
+			<pos>0.5833333333333333 0.4429444444444444</pos>
+			<size>0.2098958333333333 0.0462962962962963</size>
+			<path>./_inc/assets/dividers.svg</path>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+		</image>
+		
 
 
-	<datetime name="md_releasedate">
-		<origin>0 0</origin>
-		<pos>0.8833333333333333 0.637962962962963</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<fontSize>0.014814814814815</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<format>%Y</format>
-		<alignment>center</alignment>
-	</datetime>
+		<image name="marquee">
+			<path>{game:marquee}</path>
+			<pos>0.5 0.38</pos>
+			<origin>0 1</origin>
+			<maxSize>0.28 0.2</maxSize>
+			<zIndex>100</zIndex>
+		</image>
 
 
-	<text name="md_description">
-		<color>ffffff</color>
-		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<fontSize>0.016</fontSize>
-		<alignment>left</alignment>
-		<size>0.336458333333333 0.094444444444444</size>
-		<pos>0.5692708333333333 0.6925925925925926</pos>
-	</text>
+		<text name="description" extra="true">
+			<text>{game:desc}</text>
+			<origin>0 0</origin>
+			<!--<pos>0.5 0.43</pos>-->
+			<pos>0.5 0.60</pos>
+			<size>0.39 0.20</size>
+			<color>B3B3B3</color>
+			<alignment>left</alignment>
+			<!--<fontSize>0.025</fontSize>-->
+			<fontSize>0.035</fontSize>
+			<emptyTextDefaults>none</emptyTextDefaults>
+			<verticalAlignment>top</verticalAlignment>
+			<autoScroll>vertical</autoScroll>
+			<autoScrollDelay>2000</autoScrollDelay>
+			<autoScrollSpeed>50</autoScrollSpeed>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+
+		</text>
+	</container>
 
 
 
@@ -2193,19 +1712,27 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		<maxSize>0.6171875 2</maxSize>
 		<maxSize if="{system.theme} == 'vectrex' || {system.theme} == 'nds'">0.6171875 3</maxSize>
 		<zIndex>6</zIndex>
-		<delay ifSubset="systemVideoDelay:1 Second">1</delay>
-		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+
 		<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+		<delay ifSubset="systemVideoDelay:1 Second">1</delay>
 		<delay ifSubset="systemVideoDelay:Video off">9999</delay>
 		<showSnapshotNoVideo>true</showSnapshotNoVideo>
 		<showSnapshotDelay>true</showSnapshotDelay>
 		<loops>10</loops>
 		<effect>none</effect>
+		<storyboard event="activate">
+			<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
+			<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
+		</storyboard>
+		<storyboard event="deactivate">
+			<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
+		</storyboard>
 	</video>
 
 
 	<image name="gridOverlay" extra="true">
-		<path>./_inc/assets/boxDetailOverlay.png</path>
+		<path>./_inc/assets/black/boxDetailOverlay.png</path>
 		<size>1 1</size>
 		<pos>0 0</pos>
 		<origin>0 0</origin>
@@ -2213,18 +1740,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 	</image>
 
 </customView>
-
--->
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2239,8 +1754,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		<maxSize>1 3</maxSize>
 		<zIndex>6</zIndex>
 		<origin>0 0</origin>
-		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
 		<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+		<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+		<delay ifSubset="systemVideoDelay:1 Second">1</delay>
 		<delay ifSubset="systemVideoDelay:Video off">9999</delay>
 		<showSnapshotNoVideo>true</showSnapshotNoVideo>
 		<showSnapshotDelay>true</showSnapshotDelay>
@@ -2248,58 +1764,33 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		<effect>none</effect>
 		
 		<storyboard event="activate">
- 		<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
- 		<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
- 	</storyboard>
-<storyboard event="deactivate">
- 		<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
- 	</storyboard>
+			<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
+			<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
+		</storyboard>
+		<storyboard event="deactivate">
+			<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
+		</storyboard>
 	</video>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<image name="gridOverlay" extra="true">
-
-
-		 	<storyboard>
- 		<animation property="opacity" from="0" to="1" duration="100" begin="0" mode="easeOut"/>
- 	</storyboard>
+		<storyboard>
+			<animation property="opacity" from="0" to="1" duration="100" begin="0" mode="easeOut"/>
+		</storyboard>
 	</image>
 
 	
-
-
-
-
 
 	<!-- Position of the boxes carousel -->
 
 	<imagegrid name="gamegrid">
 		<centerSelection>true</centerSelection>
 		<scrollLoop>true</scrollLoop>
-		<!--<pos>0.2 -0.40</pos>--> <!-- this is to put the carousel at the left side -->
 		<pos>0.55 -0.40</pos>
 		<size>0.25 1.85</size>
-		<!--<margin>0.2 0.2</margin>-->
 		<origin>0.5 0.5</origin>
-		<!--<y>0 0</y>-->
-
 		<scrollDirection>vertical</scrollDirection>
 		<scrollSound>./_inc/sound/cursor.wav</scrollSound>
-
 		<autoLayout>1 3</autoLayout>
 		<autoLayoutSelectedZoom>1</autoLayoutSelectedZoom>
 		<padding>0 0</padding>
@@ -2352,11 +1843,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 		</gridtile>
 
 
-
-
-
-
-
 		<!-- this is a background tint replacement for the one set by the grid view -->
 
 		<image name="gridOverlay" extra="true">
@@ -2376,456 +1862,336 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix
 			<zIndex>1900</zIndex>
 
 
-		<image name="meta-genre" extra="true">
-			<origin>0 0</origin>
-			<pos>0.5 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-genre.svg</path>
-			<path>./${system.theme}/_inc/meta-genre.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
+			<image name="meta-genre" extra="true">
+				<origin>0 0</origin>
+				<pos>0.5 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-genre.svg</path>
+				<path>./${system.theme}/_inc/meta-genre.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
-		<text name="metagenre" extra="true">
-			<text>{game:genre}</text>
-			<origin>0 0</origin>
-			<pos>0.5 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<alignment>center</alignment>
-			<color>B3B3B3</color>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
-
-
-		<image name="meta-players" extra="true">
-			<origin>0 0</origin>
-			<pos>0.6046875 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-players.svg</path>
-			<path>./${system.theme}/_inc/meta-players.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
+			<text name="metagenre" extra="true">
+				<text>{game:genre}</text>
+				<origin>0 0</origin>
+				<pos>0.5 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<alignment>center</alignment>
+				<color>B3B3B3</color>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
 
 
-
-		<text name="players" extra="true">
-			<text>{game:players}</text>
-			<origin>0 0</origin>
-			<pos>0.6046875 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<alignment>center</alignment>
-			<color>B3B3B3</color>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
+			<image name="meta-players" extra="true">
+				<origin>0 0</origin>
+				<pos>0.6046875 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-players.svg</path>
+				<path>./${system.theme}/_inc/meta-players.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
 
 
-	<image name="meta-publisher" extra="true">
-		<origin>0 0</origin>
-		<pos>0.709375 0.443037037037037</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-publisher.svg</path>
-		<path>./${system.theme}/_inc/meta-publisher.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
+			<text name="players" extra="true">
+				<text>{game:players}</text>
+				<origin>0 0</origin>
+				<pos>0.6046875 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<alignment>center</alignment>
+				<color>B3B3B3</color>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
 
 
 
-	<text name="publisher" extra="true">
-		<text>{game:publisher}</text>
-		<origin>0 0</origin>
-		<pos>0.709375 0.5013703703703704</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<alignment>center</alignment>
-		<fontSize>0.025</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text>
+			<image name="meta-publisher" extra="true">
+				<origin>0 0</origin>
+				<pos>0.709375 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-publisher.svg</path>
+				<path>./${system.theme}/_inc/meta-publisher.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
 
-		<image name="date" extra="true">
-			<origin>0 0</origin>
-			<pos>0.8140625 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-date.svg</path>
-			<path>./${system.theme}/_inc/meta-date.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
+
+			<text name="publisher" extra="true">
+				<text>{game:publisher}</text>
+				<origin>0 0</origin>
+				<pos>0.709375 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<color>B3B3B3</color>
+				<alignment>center</alignment>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
 
 
-		<text name="releasedate" extra="true">
-			<text>{game:releaseyear}</text>
-			<origin>0 0</origin>
-			<pos>0.8140625 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<color>B3B3B3</color>
-			<alignment>center</alignment>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-		</text>
+			<image name="date" extra="true">
+				<origin>0 0</origin>
+				<pos>0.8140625 0.443037037037037</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-date.svg</path>
+				<path>./${system.theme}/_inc/meta-date.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
 
-		<image name="dividers" extra="true">
-			<origin>0 0</origin>
-			<pos>0.5833333333333333 0.4429444444444444</pos>
-			<size>0.2098958333333333 0.0462962962962963</size>
-			<path>./_inc/assets/dividers.svg</path>
-			<zIndex>99</zIndex>
-			<linearSmooth>true</linearSmooth>
-		</image>
-	
+			<text name="releasedate" extra="true">
+				<text>{game:releaseyear}</text>
+				<origin>0 0</origin>
+				<pos>0.8140625 0.5013703703703704</pos>
+				<size>0.0625 0.034259259259259</size>
+				<color>B3B3B3</color>
+				<alignment>center</alignment>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+
+			</text>
 
 
-	<image name="marquee">
-		<path>{game:marquee}</path>
-		<pos>0.5 0.38</pos>
-		<origin>0 1</origin>
-		<maxSize>0.28 0.2</maxSize>
-		<zIndex>100</zIndex>
-	</image>
+			<image name="dividers" extra="true">
+				<origin>0 0</origin>
+				<pos>0.5833333333333333 0.4429444444444444</pos>
+				<size>0.2098958333333333 0.0462962962962963</size>
+				<path>./_inc/assets/dividers.svg</path>
+				<zIndex>99</zIndex>
+				<linearSmooth>true</linearSmooth>
+			</image>
+			
 
 
-     <text name="description" extra="true">
-     	<text>{game:desc}</text>
-     	<origin>0 0</origin>
-     	<!--<pos>0.5 0.43</pos>-->
-     	<pos>0.5 0.60</pos>
-     	<size>0.39 0.20</size>
-     	<color>B3B3B3</color>
-     	<alignment>left</alignment>
-     	<!--<fontSize>0.025</fontSize>-->
-     	<fontSize>0.035</fontSize>
-     	<emptyTextDefaults>none</emptyTextDefaults>
-     	<verticalAlignment>top</verticalAlignment>
-     	<autoScroll>vertical</autoScroll>
-     	<autoScrollDelay>2000</autoScrollDelay>
-     	<autoScrollSpeed>50</autoScrollSpeed>
-     	<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-     </text>
+			<image name="marquee">
+				<path>{game:marquee}</path>
+				<pos>0.5 0.38</pos>
+				<origin>0 1</origin>
+				<maxSize>0.28 0.2</maxSize>
+				<zIndex>100</zIndex>
+			</image>
 
 
- </container>
+			<text name="description" extra="true">
+				<text>{game:desc}</text>
+				<origin>0 0</origin>
+				<!--<pos>0.5 0.43</pos>-->
+				<pos>0.5 0.60</pos>
+				<size>0.39 0.20</size>
+				<color>B3B3B3</color>
+				<alignment>left</alignment>
+				<!--<fontSize>0.025</fontSize>-->
+				<fontSize>0.035</fontSize>
+				<emptyTextDefaults>none</emptyTextDefaults>
+				<verticalAlignment>top</verticalAlignment>
+				<autoScroll>vertical</autoScroll>
+				<autoScrollDelay>2000</autoScrollDelay>
+				<autoScrollSpeed>50</autoScrollSpeed>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+
+			</text>
 
 
-<container name="metasVertical">
-	<visible>false</visible> <!--- --- turned off currently --- -->
+		</container>
+
+
+		<container name="metasVertical">
+			<visible>false</visible> <!--- --- turned off currently --- -->
 			<size>1 1</size> 
 			<origin>0 0</origin>
 			<pos>0.88 -0.2</pos>
 			<zIndex>1900</zIndex>
 
+			<image name="meta-genre" extra="true">
+				<origin>0 0</origin>
+				<pos>0 0.44</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-genre.svg</path>
+				<path>./${system.theme}/_inc/meta-genre.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
-		<image name="meta-genre" extra="true">
-			<origin>0 0</origin>
-			<pos>0 0.44</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-genre.svg</path>
-			<path>./${system.theme}/_inc/meta-genre.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
+			<text name="metagenre" extra="true">
+				<text>{game:genre}</text>
+				<origin>0 0</origin>
+				<pos>0 0.5</pos>
+				<size>0.0625 0.034259259259259</size>
+				<alignment>center</alignment>
+				<color>B3B3B3</color>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
 
-		<text name="metagenre" extra="true">
-			<text>{game:genre}</text>
-			<origin>0 0</origin>
-			<pos>0 0.5</pos>
-			<size>0.0625 0.034259259259259</size>
-			<alignment>center</alignment>
-			<color>B3B3B3</color>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
+			<image name="meta-players" extra="true">
+				<origin>0 0</origin>
+				<pos> 0.60</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-players.svg</path>
+				<path>./${system.theme}/_inc/meta-players.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
+			<text name="players" extra="true">
+				<text>{game:players}</text>
+				<origin>0 0</origin>
+				<pos>0 0.66</pos>
+				<size>0.0625 0.034259259259259</size>
+				<alignment>center</alignment>
+				<color>B3B3B3</color>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
 
+			<image name="meta-publisher" extra="true">
+				<origin>0 0</origin>
+				<pos>0 0.76</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-publisher.svg</path>
+				<path>./${system.theme}/_inc/meta-publisher.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
+			<text name="publisher" extra="true">
+				<text>{game:publisher}</text>
+				<origin>0 0</origin>
+				<pos>0 0.82</pos>
+				<size>0.0625 0.034259259259259</size>
+				<color>B3B3B3</color>
+				<alignment>center</alignment>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
 
-
-
-
-		<image name="meta-players" extra="true">
-			<origin>0 0</origin>
-			<pos> 0.60</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-players.svg</path>
-			<path>./${system.theme}/_inc/meta-players.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
-
-
-
-		<text name="players" extra="true">
-			<text>{game:players}</text>
-			<origin>0 0</origin>
-			<pos>0 0.66</pos>
-			<size>0.0625 0.034259259259259</size>
-			<alignment>center</alignment>
-			<color>B3B3B3</color>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
-
-
-
-	<image name="meta-publisher" extra="true">
-		<origin>0 0</origin>
-		<pos>0 0.76</pos>
-		<size>0.0625 0.0740740740740741</size>
-		<path>./_inc/assets/meta-publisher.svg</path>
-		<path>./${system.theme}/_inc/meta-publisher.svg</path>
-		<linearSmooth>true</linearSmooth>
-		<zIndex>99</zIndex>
-	</image>
-
-
-
-	<text name="publisher" extra="true">
-		<text>{game:publisher}</text>
-		<origin>0 0</origin>
-		<pos>0 0.82</pos>
-		<size>0.0625 0.034259259259259</size>
-		<color>B3B3B3</color>
-		<alignment>center</alignment>
-		<fontSize>0.025</fontSize>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-	</text>
+			<image name="date" extra="true">
+				<origin>0 0</origin>
+				<pos>0 0.92</pos>
+				<size>0.0625 0.0740740740740741</size>
+				<path>./_inc/assets/meta-date.svg</path>
+				<path>./${system.theme}/_inc/meta-date.svg</path>
+				<linearSmooth>true</linearSmooth>
+				<zIndex>99</zIndex>
+			</image>
 
 
-		<image name="date" extra="true">
-			<origin>0 0</origin>
-			<pos>0 0.92</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-date.svg</path>
-			<path>./${system.theme}/_inc/meta-date.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
+			<text name="releasedate" extra="true">
+				<text>{game:releaseyear}</text>
+				<origin>0 0</origin>
+				<pos>0 0.98</pos>
+				<size>0.0625 0.034259259259259</size>
+				<color>B3B3B3</color>
+				<alignment>center</alignment>
+				<fontSize>0.025</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 
-
-		<text name="releasedate" extra="true">
-			<text>{game:releaseyear}</text>
-			<origin>0 0</origin>
-			<pos>0 0.98</pos>
-			<size>0.0625 0.034259259259259</size>
-			<color>B3B3B3</color>
-			<alignment>center</alignment>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-		</text>
-
-
- </container>
+			</text>
+		</container>
 
 
 
-
- <image name="primaryBtn" extra="true">
- 	<linearSmooth>true</linearSmooth>	
- 	<origin>0.5 0.734848484848485</origin>
- 	<pos>0.90 0.52</pos>
- 	<!--<pos>0.19 0.88</pos>-->
- 	<size>0.09 0</size>
- 	<storyboard>
- 		<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
- 		<animation property="opacity" from="0" to="1" duration="700" begin="500" mode="easeOut"/>
- 		<animation property="scale" from="1" to="1.15" begin="700" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
- 	</storyboard>
-
- </image>
-
-
-<text name="start" extra="true">
-
-<text>Start</text>
-		<color>ffffff</color>
-		<!--<pos>0.26 0.905</pos>
-		<origin>0 1</origin>-->
-		<pos>0.90 0.66</pos>
-		<origin>0.5 0.5</origin>
-		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		<fontSize>0.035</fontSize>
-		<alignment>left</alignment>
-
-		<size>0 0.05</size>
-
-		<fontSize>0.041666666666667</fontSize>
-		<color>ffffff</color>
-
-		<storyboard>
-			<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
-			<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
-
-		</storyboard>
-	</text>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <text name="md_name, md_publisher">
- 	<visible>false</visible>
- </text>
-
-<!--	<image name="grid_help" extra="true">
-		<origin>1 1</origin>
-		<path>./_inc/assets/gridhelp.svg</path>
-		<pos>0.9463541666666667 0.9601851851851852</pos>
-		<maxSize>0.546875 0.05</maxSize>
-		<zIndex>100</zIndex>
-	</image>
 
 		<image name="primaryBtn" extra="true">
 			<linearSmooth>true</linearSmooth>	
-			<pos>0.052083333333333 0.7972222222222222</pos>
-			<size>0.036458333333333 0.122222222222222</size>
-			<zIndex>100</zIndex>
+			<origin>0.5 0.734848484848485</origin>
+			<pos>0.90 0.52</pos>
+			<!--<pos>0.19 0.88</pos>-->
+			<size>0.09 0</size>
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="700" begin="500" mode="easeOut"/>
+				<animation property="scale" from="1" to="1.15" begin="700" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+
 		</image>
 
-		<image name="selectTxt" extra="true">
-			<pos>0.051375 0.925</pos>
-			<size>0.036458333333333 0.02037037037037</size>
-			<path>./_inc/assets/selectTxt.png</path>
-			<zIndex>100</zIndex>
-		</image>
 
-		<image name="secondaryBtn" extra="true">
-			<linearSmooth>true</linearSmooth>	
-			<pos>0.091666666666667 0.7972222222222222</pos>
-			<size>0.036458333333333 0.122222222222222</size>
-			<zIndex>100</zIndex>
-		</image>
+		<text name="start" extra="true">
 
-		<image name="backTxt" extra="true">	
-			<pos>0.0909583333333333 0.925</pos>
-			<size>0.036458333333333 0.02037037037037</size>
-			<path>./_inc/assets/backTxt.png</path>
-			<zIndex>100</zIndex>
-		</image>
+			<text>Start</text>
+			<color>ffffff</color>
+			<pos>0.90 0.66</pos>
+			<origin>0.5 0.5</origin>
+			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			<fontSize>0.035</fontSize>
+			<alignment>left</alignment>
+			<size>0 0.05</size>
+			<fontSize>0.041666666666667</fontSize>
+			<color>ffffff</color>
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
+			</storyboard>
+		</text>
 
-	-->
+		<text name="md_name, md_publisher">
+			<visible>false</visible>
+		</text>
 
-</customView>
-
-
+	</customView>
 
 
 
+	<!-- --- Subsets --- -->
+
+	<subset name="buttonSet" displayName="${subset.buttonSet}">
+		<include name="Unique (default)"/>
+		<include name="Red Buttons"/>
+		<include name="Blue Buttons"/>
+		<include name="Black Buttons"/>
+		<include name="Cyan Buttons"/>
+		<include name="Green Buttons"/>
+		<include name="Yellow Buttons"/>
+		<include name="Master System"/>
+		<include name="SG-1000"/>
+		<include name="Snes"/>
+		<include name="Neo Geo"/>
+		<include name="Neo Geo Pocket Color"/>
+		<include name="Mega Drive / 32x / CD"/>
+		<include name="Atari 800 / 2600 / 5200"/>
+		<include name="Atari 7800"/>
+		<include name="Atari Jaguar"/>
+		<include name="NES"/>
+		<include name="PC Engine / PC Engine CD"/>
+		<include name="Super Grafx"/>
+		<include name="GameBoy"/>
+		<include name="GameBoy Advance"/>
+		<include name="Nintendo 64"/>
+		<include name="PlayStation"/>
+		<include name="3DO"/>
+		<include name="Odyssey 2 / Videopac"/>
+		<include name="Dreamcast"/>
+		<include name="Wii"/>
+		<include name="Gamecube"/>
+		<include name="MSX"/>
+		<include name="Vectrex"/>
+	</subset>
 
 
+	<subset name="primaryButton" displayName="${subset.primaryButton}">
+		<include name="b">./_inc/system/primary-b.xml</include>
+		<include name="a">./_inc/system/primary-a.xml</include>
+		<include name="x">./_inc/system/primary-x.xml</include>
+		<include name="y">./_inc/system/primary-y.xml</include>
+	</subset>
+
+	<subset name="secondaryButton" displayName="${subset.secondaryButton}">
+		<include name="a">./_inc/system/secondary-a.xml</include>
+		<include name="b">./_inc/system/secondary-b.xml</include>	
+		<include name="x">./_inc/system/secondary-x.xml</include>
+		<include name="y">./_inc/system/secondary-y.xml</include>
+	</subset>
 
 
+	<include>./_inc/system/overrides/${system.theme}.xml</include>
+	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- --- Subsets --- -->
-
-
-<!--<subset name="animations" displayName="${subset.animations}">
-	<include name="Animations on">./_inc/system/storyboards.xml</include>
-	<include name="Animations off"/>
-</subset>-->
-
-<subset name="buttonSet" displayName="${subset.buttonSet}">
-	<include name="Unique (default)"/>
-	<include name="Red Buttons"/>
-	<include name="Blue Buttons"/>
-	<include name="Black Buttons"/>
-	<include name="Cyan Buttons"/>
-	<include name="Green Buttons"/>
-	<include name="Yellow Buttons"/>
-	<include name="Master System"/>
-	<include name="SG-1000"/>
-	<include name="Snes"/>
-	<include name="Neo Geo"/>
-	<include name="Neo Geo Pocket Color"/>
-	<include name="Mega Drive / 32x / CD"/>
-	<include name="Atari 800 / 2600 / 5200"/>
-	<include name="Atari 7800"/>
-	<include name="Atari Jaguar"/>
-	<include name="NES"/>
-	<include name="PC Engine / PC Engine CD"/>
-	<include name="Super Grafx"/>
-	<include name="GameBoy"/>
-	<include name="GameBoy Advance"/>
-	<include name="Nintendo 64"/>
-	<include name="PlayStation"/>
-	<include name="3DO"/>
-	<include name="Odyssey 2 / Videopac"/>
-	<include name="Dreamcast"/>
-	<include name="Wii"/>
-	<include name="Gamecube"/>
-	<include name="MSX"/>
-	<include name="Vectrex"/>
-</subset>
-
-<!--<subset name="UImode" displayName="${subset.UImode}">
-	<include name="Grey mode (default)"/>
-	<include name="Darker mode">./_inc/system/darkmode.xml</include>
-	<include name="Black mode">./_inc/system/blackmode.xml</include>
-
-</subset>-->
-
-<subset name="primaryButton" displayName="${subset.primaryButton}">
-	<include name="b">./_inc/system/primary-b.xml</include>
-	<include name="a">./_inc/system/primary-a.xml</include>
-	<include name="x">./_inc/system/primary-x.xml</include>
-	<include name="y">./_inc/system/primary-y.xml</include>
-</subset>
-
-<subset name="secondaryButton" displayName="${subset.secondaryButton}">
-	<include name="a">./_inc/system/secondary-a.xml</include>
-	<include name="b">./_inc/system/secondary-b.xml</include>	
-	<include name="x">./_inc/system/secondary-x.xml</include>
-	<include name="y">./_inc/system/secondary-y.xml</include>
-</subset>
-
-
-
-<include>./_inc/system/overrides/${system.theme}.xml</include>
-
-
-
-<!-- There's nothing else down here! If you're that interested why not drop me a line and help out :) -->
+	<!-- There's nothing else down here! If you're that interested why not drop me a line and help out :) -->
 
 </theme>
