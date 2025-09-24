@@ -294,7 +294,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<origin>0 0</origin>
 			<pos>0 0</pos>
 			<maxSize>1 1</maxSize>
-			<path>./_inc/assets/black/background.png</path>
+			<path>./_inc/assets/background.png</path>
 			<zIndex>0</zIndex>
 		</image>
 
@@ -406,7 +406,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 		<image name="menuBar" extra="static">
-			<path>./_inc/assets/black/menuBar.png</path>
+			<path>./_inc/assets/menuBar.png</path>
 			<size>0.2604166666666667 1</size>
 			<pos>0 0</pos> <!-- was 0 0 -->
 			<origin>0 0</origin>
@@ -573,7 +573,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		</text>
 
 		<image name="background2" extra="true">
-			<path>./_inc/assets/black/detailed.png</path>
+			<path>./_inc/assets/detailed.png</path>
 			<size>1 1</size>
 			<pos>0 0</pos>
 			<origin>0 0</origin>
@@ -972,7 +972,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	<!-- this is the tint image overlay that provides clarity over the video BG -->
 
 	<image name="gridOverlay" extra="true">
-		<path>./_inc/assets/black/gridoverlay.png</path>
+		<path>./_inc/assets/gridoverlay.png</path>
 		<size>1 1</size>
 		<pos>0 0</pos>
 		<origin>0 0</origin>
@@ -1162,7 +1162,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<!-- this is a background tint replacement for the one set by the grid view -->
 
 			<image name="gridOverlay" extra="true">
-				<path>./_inc/assets/black/tilesoverlay.png</path>
+				<path>./_inc/assets/tilesoverlay.png</path>
 				<size>1 1</size>
 				<pos>1 1</pos>
 				<origin>1 1</origin>
@@ -1394,7 +1394,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 <customView name="Tiles" inherits="grid">
 
 	<image name="gridOverlay" extra="true">
-		<path>./_inc/assets/black/tileoverlay.png</path>
+		<path>./_inc/assets/tileoverlay.png</path>
 		<size>1 1</size>
 		<pos>1 1</pos>
 		<origin>1 1</origin>
@@ -1732,7 +1732,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 	<image name="gridOverlay" extra="true">
-		<path>./_inc/assets/black/boxDetailOverlay.png</path>
+		<path>./_inc/assets/boxDetailOverlay.png</path>
 		<size>1 1</size>
 		<pos>0 0</pos>
 		<origin>0 0</origin>
@@ -2144,7 +2144,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<include name="Unique (default)"/>
 		<include name="Red Buttons"/>
 		<include name="Blue Buttons"/>
-		<include name="Black Buttons"/>
+		<include name="
+		 Buttons"/>
 		<include name="Cyan Buttons"/>
 		<include name="Green Buttons"/>
 		<include name="Yellow Buttons"/>
