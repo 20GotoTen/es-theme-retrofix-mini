@@ -787,13 +787,11 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<effect>none</effect>
 			<loops>10</loops>
 			<storyboard event="activate">
-				<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
-				<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
 			</storyboard>
-			<storyboard event="deactivate">
-				<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
-			</storyboard>
+
 		</video>
+
 
 	</view>
 
@@ -988,7 +986,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<autoLayout if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd' ">4 2</autoLayout>
 		<autoLayout if="{system.theme} == 'psp'">8 2</autoLayout>
 		<!-- square boxes -->
-		<autoLayout if="{system.theme} == 'supergrafx' || {system.theme} == 'pce-cd'  || {system.theme} == 'pcengine'  || {system.theme} == 'psx' || {system.theme} == 'neogeocd' || {system.theme} == 'dreamcast' || {system.theme} == '3do' || {system.theme} == 'gba' || {system.theme} == 'gb' || {system.theme} == 'gb2players'|| {system.theme} == 'cdi'|| {system.theme} == 'nds' || {system.theme} == 'fds' || {system.theme} == 'virtualboy' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players' || {system.theme} == '3ds'  || {system.theme} == 'segacd'  ">5 2</autoLayout>
+		<autoLayout if="{system.theme} == 'supergrafx' || {system.theme} == 'pce-cd'  || {system.theme} == 'pcengine'  || {system.theme} == 'psx' || {system.theme} == 'neogeocd' || {system.theme} == 'dreamcast' || {system.theme} == '3do' || {system.theme} == 'gb' || {system.theme} == 'gb2players'|| {system.theme} == 'cdi'|| {system.theme} == 'nds' || {system.theme} == 'fds' || {system.theme} == 'virtualboy' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players' || {system.theme} == '3ds'  || {system.theme} == 'segacd'  ">5 2</autoLayout>
 
 
 
@@ -1072,6 +1070,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<showSnapshotDelay>true</showSnapshotDelay>
 		<loops>10</loops>
 		<effect>none</effect>
+					<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
 	</video>
 
 
@@ -1162,7 +1163,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<!-- this is a background tint replacement for the one set by the grid view -->
 
 			<image name="gridOverlay" extra="true">
-				<path>./_inc/assets/tilesoverlay.png</path>
+				<!--<path>./_inc/assets/tilesoverlay.png</path>-->
 				<size>1 1</size>
 				<pos>1 1</pos>
 				<origin>1 1</origin>
@@ -1432,6 +1433,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<loops>10</loops>
 		<effect>none</effect>
 		<linearSmooth>true</linearSmooth>
+					<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
 	</video>
 
 
@@ -1542,7 +1546,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<size>0.46 0.68</size>
 		<autoLayout>3 2</autoLayout>
 
-		<autoLayout if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd'">3 3</autoLayout>
+		<!--<autoLayout if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd'">3 3</autoLayout>
 
 
 		<autoLayout if="{system.theme} == 'sdlpop'">1 1</autoLayout>
@@ -1552,6 +1556,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<autoLayout if="{system.theme} == 'advision'">4 1</autoLayout>
 
 		<autoLayout if="{system.theme} == 'supergrafx' || {system.theme} == 'pce-cd'  || {system.theme} == 'pcengine'  || {system.theme} == 'psx' || {system.theme} == 'neogeocd' || {system.theme} == 'dreamcast' || {system.theme} == '3do' || {system.theme} == 'gba' || {system.theme} == 'gb' || {system.theme} == 'gb2players'|| {system.theme} == 'cdi'|| {system.theme} == 'nds' || {system.theme} == 'fds' || {system.theme} == 'virtualboy' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players' || {system.theme} == '3ds'  || {system.theme} == 'segacd'   || {system.theme} == 'atarilynx' || {system.theme} == 'gx4000'">3 2</autoLayout>
+
+	-->
 	</imagegrid>
 
 
@@ -1721,13 +1727,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<showSnapshotDelay>true</showSnapshotDelay>
 		<loops>10</loops>
 		<effect>none</effect>
-		<storyboard event="activate">
-			<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
-			<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
-		</storyboard>
-		<storyboard event="deactivate">
-			<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
-		</storyboard>
+			<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
 	</video>
 
 
@@ -1763,13 +1765,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<loops>10</loops>
 		<effect>none</effect>
 		
-		<storyboard event="activate">
-			<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
-			<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
-		</storyboard>
-		<storyboard event="deactivate">
-			<animation property="opacity" from="1" to="0" duration="600" begin="0" mode="easeOut"/>
-		</storyboard>
+			<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
 	</video>
 
 
@@ -1786,8 +1784,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	<imagegrid name="gamegrid">
 		<centerSelection>true</centerSelection>
 		<scrollLoop>true</scrollLoop>
-		<pos>0.55 -0.40</pos>
-		<size>0.25 1.85</size>
+		<pos>0.53 -0.30</pos>
+		<size>0.30 1.60</size>
 		<origin>0.5 0.5</origin>
 		<scrollDirection>vertical</scrollDirection>
 		<scrollSound>./_inc/sound/cursor.wav</scrollSound>
@@ -1798,7 +1796,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 
-		<autoLayout if="{system.theme} == 'snes' || {system.theme} == 'n64' || {system.theme} == 'solarus'">1 5</autoLayout>
+	<!--	<autoLayout if="{system.theme} == 'snes' || {system.theme} == 'n64' || {system.theme} == 'solarus'">1 5</autoLayout>
 
 		<autoLayoutSelectedZoom if="{system.theme} == 'snes'||  {system.theme} == 'n64'">1.8</autoLayoutSelectedZoom>
 
@@ -1806,7 +1804,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 		<autoLayoutSelectedZoom if="{system.theme} == 'gbc'
 			|| {system.theme} == 'gbc2players'
-			|| {system.theme} == 'gba'
+
 			|| {system.theme} == 'nds'
 			|| {system.theme} == '3ds'	
 			|| {system.theme} == 'segacd'
@@ -1821,6 +1819,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<autoLayoutSelectedZoom if="{system.theme} == 'cdi' || {system.theme} == '3do' ">1.4</autoLayoutSelectedZoom>
 			<autoLayoutSelectedZoom if="{system.theme} == '3do'">1.3</autoLayoutSelectedZoom>
 			<autoLayoutSelectedZoom if="{system.theme} == 'saturn' || {system.theme} == 'psp'">1.9</autoLayoutSelectedZoom>
+		-->
 
 
 
@@ -1846,7 +1845,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<!-- this is a background tint replacement for the one set by the grid view -->
 
 		<image name="gridOverlay" extra="true">
-			<path>./_inc/assets/boxesOverlay.png</path>
+			<!--<path>./_inc/assets/boxesOverlay.png</path>-->
 			<size>1 1</size>
 			<pos>1 1</pos>
 			<origin>1 1</origin>
@@ -1994,6 +1993,36 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 				<autoScrollSpeed>50</autoScrollSpeed>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 
+			</text>
+
+
+
+			<text name="systemName" extra="true">
+				<visible>false</visible>
+				<visible if="
+					{system.theme} == 'arcade' ||
+					{system.theme} == 'auto-adventure' ||
+					{system.theme} == 'auto-beatemup' ||
+					{system.theme} == 'auto-favorites' ||
+					{system.theme} == 'auto-fight' ||
+					{system.theme} == 'auto-lightgun' ||
+					{system.theme} == 'auto-platform' ||
+					{system.theme} == 'auto-racedriving' ||
+					{system.theme} == 'auto-roleplayings' ||
+					{system.theme} == 'auto-shootemup' ||
+					{system.theme} == 'auto-shooter' ||
+					{system.theme} == 'auto-sports' ||
+					{system.theme} == 'custom-collections'
+					">true</visible>
+
+				<text>System: {game:system}</text>
+				<origin>0 0</origin>
+				<pos>0.5 0.82</pos>
+				<size>0.39 0.10</size>
+				<color>B3B3B3</color>
+				<alignment>left</alignment>
+				<fontSize>0.035</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
 
 

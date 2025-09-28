@@ -31,4 +31,15 @@
   </image>  
 </view>
 
+
+
+<customView name="Boxes+Info" inherits="grid">
+<imagegrid name="gamegrid">
+    <size>0.44 0.72</size>
+    <autoLayout if="{system.theme} == 'gba'">2 2</autoLayout>
+  </imagegrid>
+</customView>
+
+
+
 </theme>
