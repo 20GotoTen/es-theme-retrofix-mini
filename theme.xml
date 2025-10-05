@@ -1700,6 +1700,60 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 
 		</text>
+
+
+
+
+<stackpanel name="collectionsystem" extra="true">
+	<visible>false</visible>
+				<visible if="
+					{system.theme} == 'arcade' ||
+					{system.theme} == 'auto-adventure' ||
+					{system.theme} == 'auto-beatemup' ||
+					{system.theme} == 'auto-favorites' ||
+					{system.theme} == 'auto-fight' ||
+					{system.theme} == 'auto-lightgun' ||
+					{system.theme} == 'auto-platform' ||
+					{system.theme} == 'auto-racedriving' ||
+					{system.theme} == 'auto-roleplayings' ||
+					{system.theme} == 'auto-shootemup' ||
+					{system.theme} == 'auto-shooter' ||
+					{system.theme} == 'auto-sports' ||
+					{system.theme} == 'custom-collections'
+					">true</visible>
+	<pos>0.5 0.82</pos>
+				<size>0.39 0.10</size>
+         <orientation>horizontal</orientation>
+         <zIndex>99</zIndex>
+
+
+ <text name="system-title">
+            <text>System: </text>
+				<color>B3B3B3</color>
+				<alignment>left</alignment>
+				<fontSize>0.035</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
+ <text name="system-name">
+            <text>${theme.systemName}</text>
+				<color>B3B3B3</color>
+				<alignment>left</alignment>
+				<fontSize>0.035</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
+
+
+</stackpanel>
+
+
+
+
+
+
+
+
+
+		
 	</container>
 
 
@@ -1949,6 +2003,22 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 <stackpanel name="collectionsystem" extra="true">
+	<visible>false</visible>
+				<visible if="
+					{system.theme} == 'arcade' ||
+					{system.theme} == 'auto-adventure' ||
+					{system.theme} == 'auto-beatemup' ||
+					{system.theme} == 'auto-favorites' ||
+					{system.theme} == 'auto-fight' ||
+					{system.theme} == 'auto-lightgun' ||
+					{system.theme} == 'auto-platform' ||
+					{system.theme} == 'auto-racedriving' ||
+					{system.theme} == 'auto-roleplayings' ||
+					{system.theme} == 'auto-shootemup' ||
+					{system.theme} == 'auto-shooter' ||
+					{system.theme} == 'auto-sports' ||
+					{system.theme} == 'custom-collections'
+					">true</visible>
 	<pos>0.5 0.82</pos>
 				<size>0.39 0.10</size>
          <orientation>horizontal</orientation>
@@ -1962,7 +2032,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 				<fontSize>0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
- <text name="system-name" if="${system.manufacturer} == 'Collections'">
+ <text name="system-name">
             <text>${theme.systemName}</text>
 				<color>B3B3B3</color>
 				<alignment>left</alignment>
@@ -1972,6 +2042,47 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 </stackpanel>
+
+
+
+
+
+<!--	<text name="systemName" extra="true">
+				<visible>false</visible>
+				<visible if="
+					{system.theme} == 'arcade' ||
+					{system.theme} == 'auto-adventure' ||
+					{system.theme} == 'auto-beatemup' ||
+					{system.theme} == 'auto-favorites' ||
+					{system.theme} == 'auto-fight' ||
+					{system.theme} == 'auto-lightgun' ||
+					{system.theme} == 'auto-platform' ||
+					{system.theme} == 'auto-racedriving' ||
+					{system.theme} == 'auto-roleplayings' ||
+					{system.theme} == 'auto-shootemup' ||
+					{system.theme} == 'auto-shooter' ||
+					{system.theme} == 'auto-sports' ||
+					{system.theme} == 'custom-collections'
+					">true</visible>
+
+	 <text>System:  {game:system:name}</text>
+				<origin>0 0</origin>
+				<pos>0.5 0.82</pos>
+				<size>0.39 0.10</size>
+				<color>B3B3B3</color>
+				<alignment>left</alignment>
+				<fontSize>0.035</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>-->
+
+
+
+
+
+
+
+
+
 
 
 		</container>
