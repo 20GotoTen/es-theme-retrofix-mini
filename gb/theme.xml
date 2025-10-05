@@ -22,10 +22,7 @@
 
 
  <video name="md_video">
-   <delay>999999999999</delay>
-    <pos>-2 -2</pos>
-   <origin>0 0</origin>
-   <zIndex>-2</zIndex>
+  <visible>false</visible> 
  </video>
 
  <image name="md_image">
@@ -80,33 +77,39 @@
 <view name="grid">
 
   <video name="md_video">
-   <delay>999999999999</delay>
-   <pos>-2 -2</pos>
-   <zIndex>-2</zIndex>
-   <origin>0 0</origin>
+  <visible>false</visible>
  </video>
 
  <image name="md_image">
- 
    <origin>0 0</origin>
    <pos>0 -0.3</pos>
    <size>1 0</size>
    <zIndex>5</zIndex>
    <color>94B300ff</color>
+     <storyboard event="activate">
+        <animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+      </storyboard>
  </image>
 
 <video name="backgroundvideo" extra="true">
   <path>{game:video}</path>
   <origin>0 0</origin>
   <pos>0 -0.3</pos>
-  <minSize>1 0</minSize>
+ <maxSize>1 3</maxSize>
   <effect>none</effect>
   <zIndex>6</zIndex>
   <color>94B300ff</color>
-  <delay ifSubset="mainVideoDelay:1 Second">1</delay>
-  <delay ifSubset="mainVideoDelay:2 Seconds">2</delay>
-  <delay ifSubset="mainVideoDelay:5 Seconds">5</delay>
-  <delay ifSubset="mainVideoDelay:Video off">999999999</delay>
+    <delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+    <delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+    <delay ifSubset="systemVideoDelay:1 Second">1</delay>
+    <delay ifSubset="systemVideoDelay:Video off">9999</delay>
+        <showSnapshotNoVideo>true</showSnapshotNoVideo>
+    <showSnapshotDelay>true</showSnapshotDelay>
+    <loops>10</loops>
+    <effect>none</effect>
+  <storyboard event="activate">
+        <animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+      </storyboard>
 </video>
 
 </view>
@@ -152,10 +155,17 @@
   <effect>none</effect>
   <zIndex>6</zIndex>
   <color>94B300ff</color>
-  <delay ifSubset="mainVideoDelay:1 Second">1</delay>
-  <delay ifSubset="mainVideoDelay:2 Seconds">2</delay>
-  <delay ifSubset="mainVideoDelay:5 Seconds">5</delay>
-  <delay ifSubset="mainVideoDelay:Video off">999999999</delay>
+    <delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
+    <delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
+    <delay ifSubset="systemVideoDelay:1 Second">1</delay>
+    <delay ifSubset="systemVideoDelay:Video off">9999</delay>
+      <showSnapshotNoVideo>true</showSnapshotNoVideo>
+    <showSnapshotDelay>true</showSnapshotDelay>
+    <loops>10</loops>
+    <effect>none</effect>
+  <storyboard event="activate">
+        <animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+      </storyboard>
 </video>
 
 

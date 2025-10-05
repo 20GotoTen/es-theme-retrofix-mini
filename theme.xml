@@ -23,8 +23,14 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<subset.hideLogo>Batocera logo</subset.hideLogo>
 		<subset.scanlines>Scanlines on System Views</subset.scanlines>
 		<subset.scanlinesMain>Scanlines on Main Menu</subset.scanlinesMain>
-		<subset.menuFanArt>Show fan art on Main Menu</subset.menuFanArt>
+		<theme.systemName>contains(lower({game:systemName}), 'sega cd') ? 'Mega-CD' : {game:systemName} || {game:systemName} == 'Mame' ? 'M.A.M.E.' : {game:systemName} || {game:systemName} == 'Super Nintendo Entertainment System' ? 'Super Nintendo' : {game:systemName}</theme.systemName> <!-- thanks to Pajarorrojo the the help! -->
+
 	</variables>
+
+
+
+
+
 
 
 	<subset name="mainVideoDelay" displayName="${subset.mainVideoDelay}">
@@ -1942,34 +1948,31 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			</text>
 
 
-
-			<text name="systemName" extra="true">
-				<visible>false</visible>
-				<visible if="
-					{system.theme} == 'arcade' ||
-					{system.theme} == 'auto-adventure' ||
-					{system.theme} == 'auto-beatemup' ||
-					{system.theme} == 'auto-favorites' ||
-					{system.theme} == 'auto-fight' ||
-					{system.theme} == 'auto-lightgun' ||
-					{system.theme} == 'auto-platform' ||
-					{system.theme} == 'auto-racedriving' ||
-					{system.theme} == 'auto-roleplayings' ||
-					{system.theme} == 'auto-shootemup' ||
-					{system.theme} == 'auto-shooter' ||
-					{system.theme} == 'auto-sports' ||
-					{system.theme} == 'custom-collections'
-					">true</visible>
-
-				<text>System: {game:system}</text>
-				<origin>0 0</origin>
-				<pos>0.5 0.82</pos>
+<stackpanel name="collectionsystem" extra="true">
+	<pos>0.5 0.82</pos>
 				<size>0.39 0.10</size>
+         <orientation>horizontal</orientation>
+         <zIndex>99</zIndex>
+
+
+ <text name="system-title">
+            <text>System: </text>
 				<color>B3B3B3</color>
 				<alignment>left</alignment>
 				<fontSize>0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
+ <text name="system-name" if="${system.manufacturer} == 'Collections'">
+            <text>${theme.systemName}</text>
+				<color>B3B3B3</color>
+				<alignment>left</alignment>
+				<fontSize>0.035</fontSize>
+				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
+			</text>
+
+
+</stackpanel>
+
 
 		</container>
 
@@ -2073,7 +2076,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<image name="primaryBtn" extra="true">
 			<linearSmooth>true</linearSmooth>	
 			<origin>0.5 0.734848484848485</origin>
-			<pos>0.90 0.52</pos>
+			<pos>0.91 0.52</pos>
 			<!--<pos>0.19 0.88</pos>-->
 			<size>0.09 0</size>
 			<storyboard>
@@ -2088,7 +2091,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<text name="start" extra="true">
 			<text>Start</text>
 			<color>ffffff</color>
-			<pos>0.90 0.66</pos>
+			<pos>0.91 0.66</pos>
 			<origin>0.5 0.5</origin>
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			<fontSize>0.035</fontSize>
