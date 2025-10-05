@@ -20,7 +20,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<subset.secondaryButton>Secondary button graphic</subset.secondaryButton>
 		<subset.artworkregion>System logos</subset.artworkregion>
 		<subset.buttonSet>Button Set</subset.buttonSet>
-		<subset.hideLogo>Batocera logo</subset.hideLogo>
 		<subset.scanlines>Scanlines on System Views</subset.scanlines>
 		<subset.scanlinesMain>Scanlines on Main Menu</subset.scanlinesMain>
 		<theme.systemName>contains(lower({game:systemName}), 'sega cd') ? 'Mega-CD' : {game:systemName} || {game:systemName} == 'Mame' ? 'M.A.M.E.' : {game:systemName} || {game:systemName} == 'Super Nintendo Entertainment System' ? 'Super Nintendo' : {game:systemName}</theme.systemName> <!-- thanks to Pajarorrojo the the help! -->
@@ -52,12 +51,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<include name="JP"/>
 		<include name="US"/>
 		<include name="EU"/>
-	</subset>
-
-
-	<subset name="hideLogo" displayName="${subset.hideLogo}">
-		<include name="Hide logo"/>
-		<include name="Show logo"/>
 	</subset>
 
 
@@ -217,16 +210,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 	<view name="system">
 
-
-
-		<image name="batologo" extra="static">
-			<origin>1 0</origin>
-			<pos ifSubset="hideLogo:Show logo">0.96 0.88</pos>
-			<pos ifSubset="hideLogo:Hide logo">-2 -2</pos>
-			<size>0.085 0</size>
-			<path>./_inc/icons/batocera.svg</path>    
-			<zIndex>200</zIndex>
-		</image>
 
 		<!-- -------- START stackpanel implementation for system screen ------ -->
 
@@ -1753,7 +1736,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 
-		
+
 	</container>
 
 
@@ -2230,8 +2213,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<include name="Unique (default)"/>
 		<include name="Red Buttons"/>
 		<include name="Blue Buttons"/>
-		<include name="
-		 Buttons"/>
+		<include name="Buttons"/>
 		<include name="Cyan Buttons"/>
 		<include name="Green Buttons"/>
 		<include name="Yellow Buttons"/>
