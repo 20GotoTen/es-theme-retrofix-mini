@@ -62,7 +62,7 @@ GitHub:      	https://github.com/
 			<alignment>left</alignment>
 			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
 			<pos>0.2213541666666667 0.6740740740740741</pos>
-			<fontSize>0.028</fontSize>
+			<fontSize>0.035</fontSize>
 			<color>d9d9d9</color>
 			<glowColor>00000018</glowColor>
 			<glowSize>0</glowSize>
