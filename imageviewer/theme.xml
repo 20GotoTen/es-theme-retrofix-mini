@@ -5,18 +5,65 @@
 
   <view name="system">
    <image name="startSet" extra="static"></image>
+
      <text name="browseGames" extra="static">
     <text>Browse images</text>
-    <pos>0.3239583333333333 0.933</pos>
-    <origin>0 1</origin>
-    <maxSize>1 0.05</maxSize>
-    <color>ffffff</color>
-    <fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-    <fontSize>0.019</fontSize>
-    <alignment>left</alignment>
-    <zIndex>200</zIndex>
+ <color>ffffff</color>
+      <pos>0.365 0.915</pos>
+      <origin>0 1</origin>
+      <fontPath>./../_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
+      <fontSize>0.035</fontSize>
+      <alignment>left</alignment>
+
+      <size>0 0.05</size>
+
+      <fontSize>0.041666666666667</fontSize>
+      <color>ffffff</color>
+
+      <storyboard>
+        <animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+        <animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
+
+      </storyboard>
+
+
+
+
+
+
+
+
+
+
+
   </text>
+
+
+
+
+<text name="system-count,system-count-single,system-count-null" extra="true">
+  <visible>false</visible>
+    </text>
+
+
+
+
+
+
+
+
+
+
+
+
  </view>
+
+
+
+
+
+
+
 
 
 
