@@ -9,7 +9,9 @@
 	<view name="detailed">
 		<textlist name="gamelist">
 			<selectorColor>D0B272</selectorColor>
-		</textlist>
+		      <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 	</view>
 
 <view name="grid">

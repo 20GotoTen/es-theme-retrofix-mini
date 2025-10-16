@@ -11,7 +11,9 @@
 		<textlist name="gamelist">
 			<selectorColor>FF3310</selectorColor>
 			<selectedColor>ffffff</selectedColor>
-		</textlist>
+		      <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 	</view>
 
 	<view name="grid">

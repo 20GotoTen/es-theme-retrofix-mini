@@ -9,12 +9,16 @@
     <textlist name="gamelist">
      <selectorColor>EB222C</selectorColor>
      <selectedColor>ffffff</selectedColor>
-   </textlist>
+         <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 
  <textlist ifSubset="artworkregion:US" name="gamelist">
      <selectorColor>F79226</selectorColor>
      <selectedColor>000000</selectedColor>
-   </textlist>
+         <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
  </view>
 
 

@@ -67,10 +67,12 @@
 
 
 
- <view name="detailed">
+ <view name="basic, detailed">
   <textlist name="gamelist">
    <selectorColor>4F4F4F</selectorColor>
    <selectedColor>ffffff</selectedColor>
+       <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
  </textlist>
 </view>
 

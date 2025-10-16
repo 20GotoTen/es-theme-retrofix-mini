@@ -12,7 +12,9 @@
 			<selectorColor>5354BB</selectorColor>
 						<selectorColorEnd>1EE0EF</selectorColorEnd>
 			<selectorGradientType>default</selectorGradientType>
-		</textlist>
+		      <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 	</view>
 
 <view name="grid">

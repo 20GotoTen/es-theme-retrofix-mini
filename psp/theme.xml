@@ -14,11 +14,13 @@
 
 	</view>
 
-	<view name="detailed">
+	<view name="basic, detailed">
 		<textlist name="gamelist">
 			<selectorColor>5DB8D0</selectorColor>
-			<selectedColor>ffffff</selectedColor>
-		</textlist>
+			<selectedColor>000000</selectedColor>
+		      <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 	</view>
 
 	<view name="grid">

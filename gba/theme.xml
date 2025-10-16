@@ -14,7 +14,9 @@
    <textlist name="gamelist">
     <selectorColor>1F00CC</selectorColor>
     <selectedColor>ffffff</selectedColor>
-  </textlist>
+        <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 </view>
 
 

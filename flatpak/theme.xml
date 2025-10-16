@@ -18,10 +18,12 @@
   </text>
  </view>
 
- <view name="detailed">
+ <view name="basic, detailed">
   <textlist name="gamelist">
    <selectorColor>FF0000</selectorColor>
    <selectedColor>ffffff</selectedColor>
+       <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
  </textlist>
 </view>
 

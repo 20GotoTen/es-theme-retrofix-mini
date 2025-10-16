@@ -7,10 +7,12 @@
    <image name="startSet" extra="static"></image>
  </view>
 
- <view name="detailed">
+ <view name="basic, detailed">
   <textlist name="gamelist">
    <selectorColor>F38F60</selectorColor>
    <selectedColor>000000</selectedColor>
+       <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
  </textlist>
 </view>
 

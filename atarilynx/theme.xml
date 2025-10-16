@@ -11,7 +11,9 @@
     <textlist name="gamelist">
      <selectorColor>FFD42A</selectorColor>
      <selectedColor>000000</selectedColor>
-   </textlist>
+         <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
  </view>
 
  <customView name="Tiles" inherits="grid">

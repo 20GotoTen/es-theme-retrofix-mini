@@ -8,7 +8,9 @@
 		<textlist name="gamelist">
 			<selectorColor>0060A8</selectorColor>
 			<selectedColor>ffffff</selectedColor>
-		</textlist>
+		      <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
+ </textlist>
 	</view>
 
 	<customView name="Tiles" inherits="grid">

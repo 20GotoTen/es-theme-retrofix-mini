@@ -18,6 +18,8 @@
   <textlist name="gamelist">
    <selectorColor>4B4793</selectorColor>
    <selectedColor>ffffff</selectedColor>
+       <extraTextColor>ffffff4d</extraTextColor>
+      <extraTextSelectedColor>0000004d</extraTextSelectedColor>
  </textlist>
 
 
