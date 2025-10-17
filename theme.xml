@@ -8,12 +8,13 @@ System      	Batocera, Knulli 5.41+
 GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 -->
 
-<theme defaultView="Vertical Boxes" defaultTransition="fade & slide">
+<theme defaultView="Vertical Boxes" defaultTransition="instant">
 
 
 	<formatVersion>7</formatVersion>
 
 	<variables>
+		<subset.animations>Animations</subset.animations>
 		<subset.mainVideoDelay>Main menu video delay</subset.mainVideoDelay>
 		<subset.systemVideoDelay>System views video delay</subset.systemVideoDelay>
 		<subset.primaryButton>Primary button graphic</subset.primaryButton>
@@ -121,10 +122,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		</menuGroup>
 
 		<menuBackground name="menubg">
-
 			<color>000000ff</color>
 			<!--<path>./_inc/system/frame.png</path>-->
-
 		</menuBackground>
 
 
@@ -184,15 +183,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<forceUppercase>false</forceUppercase>
 		</helpsystem> 
 	</view>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -267,13 +257,32 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 		
 
-		<image name="background" extra="true">
+		<!--<image name="background" extra="true">
 			<origin>0 0</origin>
 			<pos>0 0</pos>
 			<maxSize>1 1</maxSize>
 			<path>./_inc/assets/background.png</path>
 			<zIndex>0</zIndex>
+		</image>-->
+
+
+
+
+
+<image name="background" extra="true">
+			<path>./_inc/assets/splashbg.png</path>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<linearSmooth>true</linearSmooth>
+						<zIndex>0</zIndex>
+						<maxSize>1 1</maxSize>
 		</image>
+
+
+
+
+
+
 
 		<image name="sysBackgrounds"  extra="static">
 			<zIndex>0</zIndex>
@@ -281,12 +290,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0.615 0.5</pos>
 			<size>0.770833333333333 0</size> 
 			<maxSize>2 2</maxSize>
-			<path>./_inc/assets/defaultbg.png</path>
+		<!--	<path>./_inc/assets/defaultbg.png</path>-->
 			<path>./${system.theme}/_inc/bg.jpg</path>
 			<linearSmooth>true</linearSmooth>
-			<storyboard>
-				<animation property="scale" from="1.30" to="1" begin="0" duration="9000" mode="easeOut"/>
-			</storyboard>
 		</image>
 
 
@@ -297,12 +303,10 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<video name="backgroundvideo" extra="true">
 			<default>./_inc/system/blank.png</default>
 			<path>{random}</path>
-			
 			<pos>0.229166666666667 0</pos>
 			<origin>0 0</origin>
 			<size>0.770833333333333 1</size>
 			<showSnapshotNoVideo>false</showSnapshotNoVideo>
-
 						<delay ifSubset="mainVideoDelay:1 Second">1</delay>
 			<delay ifSubset="mainVideoDelay:2 Seconds">2</delay>
 						<delay ifSubset="mainVideoDelay:5 Seconds">5</delay>
@@ -393,7 +397,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<path ifSubset="artworkregion:US">./${system.theme}/_inc/marker-us.png</path>	
 			<path ifSubset="artworkregion:EU">./${system.theme}/_inc/marker-eu.png</path>	
 			<path ifSubset="artworkregion:MIX">./${system.theme}/_inc/marker.png</path>
-			<size>0.0078125 0.35</size>
+			<size>0.018 0.35</size>
 			<pos>0 0.5</pos>
 			<linearSmooth>true</linearSmooth>
 			<origin>0 0.5</origin>
@@ -408,30 +412,16 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0 0.5</pos>
 			<origin>0 0.5</origin>
 			<zIndex>3</zIndex>
-			<storyboard>
-				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-				<animation property="opacity" from="0" to="1" duration="1600" begin="600" mode="easeOut"/>
-				<animation property="opacity" from="1" to="0.2" begin="1800" duration="1600" autoReverse="true" repeat="forever" mode="easeInOut"/>
-			</storyboard>
 		</image> 
 
 
 		<image name="primaryBtn" extra="static">
-			<storyboard>
-				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
-				<animation property="opacity" from="0" to="1" duration="700" begin="500" mode="easeOut"/>
-				<animation property="scale" from="1" to="1.15" begin="700" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
-			</storyboard>
 			<linearSmooth>true</linearSmooth>
 		</image>
 
 
 		<image name="gamemarker" extra="static">
 			<pos>-0.009 0.5</pos>
-			<storyboard>
-				<animation property="x" from="-0.009" to="-0.009" begin="0" duration="200" mode="easeOut"/>
-				<animation property="x" from="-0.009" to="0" begin="200" duration="500" mode="easeOut"/>
-			</storyboard>
 		</image>
 
 
@@ -449,17 +439,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
 			<fontSize>0.035</fontSize>
 			<alignment>left</alignment>
-
 			<size>0 0.05</size>
-
 			<fontSize>0.041666666666667</fontSize>
 			<color>ffffff</color>
-
-			<storyboard>
-				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
-				<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
-
-			</storyboard>
 		</text>
 
 
@@ -509,7 +491,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 <image name="background3" extra="true"><!-- given a different name, seems to work better -->
 			<path>./_inc/assets/detailed.png</path>
 			<size>1 1</size>
-			<pos>-2 -2</pos> <!-- set to offscreen as setting to visible odes not preload -->
+			<pos>-2 -2</pos> <!-- set to offscreen as setting to visible does not preload -->
 			<origin>0 0</origin>
 			<zIndex>11</zIndex>
 		</image>
@@ -547,19 +529,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0.75 0.5</pos>
 			<origin>0 0.5</origin>
 			<linearSmooth>true</linearSmooth>
-			<storyboard>
-				<animation property="scale" from="1.30" to="1" begin="0" duration="9000" autoReverse="true" repeat="forever"  mode="easeInOut"/>
-			</storyboard>
 		</image>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -567,12 +537,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<origin>0.5 0.5</origin>
 			<pos>0.10 0.11</pos>
 			<maxSize>0.125 0.12</maxSize>
-
-			<storyboard>
-				<!--<animation property="x" from="0.042083333333333" begin="300" duration="500" mode="easeOut"/>-->
-				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
-			</storyboard>
 		</image>
 
 
@@ -610,17 +574,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<lines>9</lines>
 			<scrollSound>./_inc/sound/cursor.wav</scrollSound>
 			<scrollbarSize>0.0</scrollbarSize>
-			<storyboard>
-				<animation property="opacity" from="0" to="1"  begin="0" duration="500" mode="easeOut"/>
-				<animation property="y" from="0.6" duration="500" mode="easeOut"/>
-				<animation property="opacity" from="1" to="0.6" begin="1000" duration="1000" autoReverse="true" repeat="forever" mode="easeInOut"/>
-			</storyboard>
 		      <extraTextColor>ffffff4d</extraTextColor>
       <extraTextSelectedColor>0000004d</extraTextSelectedColor>
  </textlist>
-
-
-
 
 
 
@@ -670,12 +626,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<origin>0.5 0.5</origin>
 			<pos>0.10 0.11</pos>
 			<maxSize>0.125 0.12</maxSize>
-
-			<storyboard>
-				<!--<animation property="x" from="0.042083333333333" begin="300" duration="500" mode="easeOut"/>-->
-				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
-			</storyboard>
 		</image>
 
 
@@ -713,11 +663,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<lines>9</lines>
 			<scrollSound>./_inc/sound/cursor.wav</scrollSound>
 			<scrollbarSize>0.0</scrollbarSize>
-			<storyboard>
-				<animation property="opacity" from="0" to="1"  begin="0" duration="500" mode="easeOut"/>
-				<animation property="y" from="0.6" duration="500" mode="easeOut"/>
-				<animation property="opacity" from="1" to="0.6" begin="1000" duration="1000" autoReverse="true" repeat="forever" mode="easeInOut"/>
-			</storyboard>
 		      <extraTextColor>ffffff4d</extraTextColor>
       <extraTextSelectedColor>0000004d</extraTextSelectedColor>
  </textlist>
@@ -727,23 +672,17 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 <container name="gameData" extra="true"><!-- --- this is the main container for ALL of the game data --- -->
 		<size>0.5 1</size> <!-- determine the width of the entire area. you do not need to adjust any of the inner element widths. -->
 		<origin>0 0</origin>
-		<!--<pos>-0.35 0.03</pos>-->
-		<!--<pos>0.5 0.44</pos>-->
 		<pos>0.42 0.54</pos> <!-- set the position of the game data -->
 		<zIndex>1900</zIndex>
 		
-
-
 
 		<image name="marqueeinfo" extra="true">
 			<path>{game:marquee}</path>
 			<pos>0.5 0</pos>
 			<origin>0.5 1</origin>
 			<maxSize>0.70 0.2</maxSize>
+			<autoFade>false</autoFade>
 		</image>
-
-
-
 
 
 					<stackpanel name="metas" extra="true"> <!-- --- this is the main container for all of the meta data --- -->
@@ -752,7 +691,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 					         <orientation>horizontal</orientation>
 					         <separator>1</separator>
 					         <origin>0 0</origin>
-
 
 
 					<!-- genre info -->
@@ -773,7 +711,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="metagenre" extra="true">
 								<text>{game:genre}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -821,7 +759,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="publisher" extra="true">
 								<text>{game:publisher}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -885,19 +823,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 					<!-- END metadata -->
 
 
-
-
-
-
-
-
-
-
-
-
-	
-
-
 		<text name="description" extra="true">
 			<text>{game:desc}</text>
 			<origin>0 0</origin>
@@ -913,10 +838,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<autoScrollSpeed>50</autoScrollSpeed>
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 		</text>
-
-	
-
-
 
 
 <stackpanel name="collectionsystem" extra="true">
@@ -979,18 +900,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<showSnapshotDelay>true</showSnapshotDelay>
 			<effect>none</effect>
 			<loops>10</loops>
-			<storyboard event="activate">
-				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
-			</storyboard>
-
 		</video>
 
-
 	</view>
-
-
-
-
 
 
 
@@ -1018,11 +930,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<origin>0.5 0.5</origin>
 		<pos>0.10 0.11</pos>
 		<maxSize>0.125 0.12</maxSize>
-		<storyboard>
-				<!--<animation property="x" from="0.042083333333333" begin="300" duration="500" mode="easeOut"/>-->
-				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
-			</storyboard>
 	</image>
 
 	<!-- this is the tint image overlay that provides clarity over the video BG -->
@@ -1045,12 +952,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<autoLayout if="{system.theme} == 'psp'">8 2</autoLayout>
 		<!-- square boxes -->
 		<autoLayout if="{system.theme} == 'supergrafx' || {system.theme} == 'pce-cd'  || {system.theme} == 'pcengine'  || {system.theme} == 'psx' || {system.theme} == 'neogeocd' || {system.theme} == 'dreamcast' || {system.theme} == '3do' || {system.theme} == 'gb' || {system.theme} == 'gb2players'|| {system.theme} == 'cdi'|| {system.theme} == 'nds' || {system.theme} == 'fds' || {system.theme} == 'virtualboy' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players' || {system.theme} == '3ds'  || {system.theme} == 'segacd'  ">5 2</autoLayout>
-
-
-
 		<autoLayout if="{system.theme} == 'ngpc' || {system.theme} == 'ngp' || {system.theme} == 'atarilynx'">6 2</autoLayout>
-
-		
 		<autoLayout if="{system.theme} == 'retrobat' || {system.theme} == 'flatpak'">6 2</autoLayout>
 		<autoLayout if="{system.theme} == 'imageviewer'">4 2</autoLayout>
 
@@ -1128,9 +1030,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<showSnapshotDelay>true</showSnapshotDelay>
 		<loops>10</loops>
 		<effect>none</effect>
-					<storyboard event="activate">
-				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
-			</storyboard>
 	</video>
 
 
@@ -1158,9 +1057,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<centerSelection>true</centerSelection>
 		<scrollLoop>true</scrollLoop>
 		<pos>0 0.14</pos>
-
 		<size>1 0.55</size>
-
 		<margin>0 0</margin>
 		<autoLayout>5 1</autoLayout>
 		<autoLayoutSelectedZoom>1.2</autoLayoutSelectedZoom>
@@ -1168,13 +1065,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 		
 		<autoLayout if="{system.theme} == 'psp' || {system.theme} == 'saturn' || {system.theme} == 'c64'  || {system.theme} == 'c20' || {system.theme} == 'zxspectrum'">7 1</autoLayout>
-
 		<autoLayoutSelectedZoom if="{system.theme} == 'atarilynx'">1.3</autoLayoutSelectedZoom>
-
 		<autoLayoutSelectedZoom if="{system.theme} == 'ps3' || {system.theme} == 'psp' || {system.theme} == 'saturn' || {system.theme} == 'ngp' || {system.theme} == 'ngpc'">1.4</autoLayoutSelectedZoom>
-
 		<autoLayoutSelectedZoom if="{system.theme} == 'n64' || {system.theme} == 'c64' || {system.theme} == 'c20' || {system.theme} == 'zxspectrum'">1.5</autoLayoutSelectedZoom>
-		
 		<autoLayoutSelectedZoom
 			if="{system.theme} == 'neogeocd'
 			|| {system.theme} == 'psx'  
@@ -1199,11 +1092,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 			<autoLayoutSelectedZoom
 				if="{system.theme} == 'snes' || {system.theme} == 'n64'|| {system.theme} == 'gameandwatch'|| {system.theme} == 'scv'">1.90</autoLayoutSelectedZoom>
-
-
 				<scrollDirection>horizontal</scrollDirection>
 				<scrollSound>./_inc/sound/cursor.wav</scrollSound>
-
 			</imagegrid>
 
 
@@ -1236,133 +1126,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 				<visible>false</visible>
 			</text>
 
-			
-
-
-
-
-		<!--
-			<container name="metas">
-				<size>1 1</size> 
-				<origin>0 0</origin>
-				<pos>0 0.02</pos>
-				<zIndex>1900</zIndex>
-
-				<image name="meta-genre" extra="true">
-					<origin>0.5 0</origin>
-					<pos>0.34296875 0.8218518518518519</pos>
-					<size>0.0625 0.0740740740740741</size>
-					<path>./_inc/assets/meta-genre.svg</path>
-					<path>./${system.theme}/_inc/meta-genre.svg</path>
-					<linearSmooth>true</linearSmooth>
-					<zIndex>99</zIndex>
-				</image>
-
-				<text name="metagenre" extra="true">
-					<text>{game:genre}</text>
-					<origin>0.5 0</origin>
-					<pos>0.34296875 0.8811111111111111</pos>
-					<size>0.0625 0.036259259259259</size>
-					<alignment>center</alignment>
-					<color>B3B3B3</color>
-					<fontSize>0.025</fontSize>
-					<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-				</text>
-
-
-
-				<image name="meta-players" extra="true">
-					<origin>0.5 0</origin>
-					<pos>0.44765625 0.8218518518518519</pos>
-					<size>0.0625 0.0740740740740741</size>
-					<path>./_inc/assets/meta-players.svg</path>
-					<path>./${system.theme}/_inc/meta-players.svg</path>
-					<linearSmooth>true</linearSmooth>
-					<zIndex>99</zIndex>
-				</image>
-
-
-
-				<text name="players" extra="true">
-					<text>{game:players}</text>
-					<origin>0.5 0</origin>
-					<pos>0.44765625 0.8811111111111111</pos>
-					<size>0.0625 0.034259259259259</size>
-					<alignment>center</alignment>
-					<color>B3B3B3</color>
-					<fontSize>0.025</fontSize>
-					<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-				</text>
-
-
-
-
-				<image name="meta-publisher" extra="true">
-					<origin>0.5 0</origin>
-					<pos>0.55234375 0.8218518518518519</pos>
-					<size>0.0625 0.0740740740740741</size>
-					<path>./_inc/assets/meta-publisher.svg</path>
-					<path>./${system.theme}/_inc/meta-publisher.svg</path>
-					<linearSmooth>true</linearSmooth>
-					<zIndex>99</zIndex>
-				</image>
-
-
-
-
-				<text name="publisher" extra="true">
-					<text>{game:publisher}</text>
-					<origin>0.5 0</origin>
-					<pos>0.55234375 0.8811111111111111</pos>
-					<size>0.0625 0.034259259259259</size>
-					<color>B3B3B3</color>
-					<alignment>center</alignment>
-					<fontSize>0.025</fontSize>
-					<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-				</text>
-
-
-
-
-
-				<image name="dividers" extra="true">
-					<origin>0.5 0</origin>
-					<pos>0.5 0.8218518518518519</pos>
-					<size>0.2098958333333333 0.0462962962962963</size>
-					<path>./_inc/assets/dividers.svg</path>
-					<zIndex>99</zIndex>
-					<linearSmooth>true</linearSmooth>
-				</image>
-
-
-
-				<image name="date" extra="true">
-					<origin>0.5 0</origin>
-					<pos>0.65703125 0.8218518518518519</pos>
-					<size>0.0625 0.0740740740740741</size>
-					<path>./_inc/assets/meta-date.svg</path>
-					<path>./${system.theme}/_inc/meta-date.svg</path>
-					<linearSmooth>true</linearSmooth>
-					<zIndex>99</zIndex>
-				</image>
-
-
-				<text name="releasedate" extra="true">
-					<text>{game:releaseyear}</text>
-					<origin>0.5 0</origin>
-					<pos>0.65703125 0.8811111111111111</pos>
-					<size>0.0625 0.034259259259259</size>
-					<color>B3B3B3</color>
-					<alignment>center</alignment>
-					<fontSize>0.025</fontSize>
-					<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-				</text>
-
-
-			</container> -->
-
-
 
 <container name="metawrapper">
 	<pos>0.5 0.84</pos>
@@ -1393,7 +1156,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="metagenre" extra="true">
 								<text>{game:genre}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -1441,7 +1204,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="publisher" extra="true">
 								<text>{game:publisher}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -1511,90 +1274,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 					<!-- END metadata -->
 
-
-
-
-
-
-
-
-<!--
-<stackpanel name="game-info" extra="true">
-
-  <size>1 0.0740740740740741</size>
-  <lineSpacing>1</lineSpacing>
-         <separator>10</separator>
-         <fontSize>0.035</fontSize>
-         <orientation>horizontal</orientation>
-         <reverse>false</reverse>
-
-
-
-
-
-<image name="genre" extra="true">
-				<origin>0 0</origin>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-genre.svg</path>
-				<path>./${system.theme}/_inc/meta-genre.svg</path>
-				<linearSmooth>true</linearSmooth>
-
-			</image>
-
-
-
-
-
-<image name="publisher" extra="true">
-				<origin>0 0</origin>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-publisher.svg</path>
-				<path>./${system.theme}/_inc/meta-publisher.svg</path>
-				<linearSmooth>true</linearSmooth>
-			</image>
-
-
-
-
-<text name="gamepublisher" extra="true">
-  <text>{game:publisher}</text>
-  <origin>0 0</origin>
-				<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-  <lineSpacing>1</lineSpacing>
-				<color>ffffffff</color>
-				<verticalAlignment>top</verticalAlignment>
-									<multiLine>false</multiLine>
-</text>
-
-
-
-
-
-
-<image name="meta-date" extra="true">
-				<origin>0 0</origin>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-date.svg</path>
-				<path>./${system.theme}/_inc/meta-date.svg</path>
-				<linearSmooth>true</linearSmooth>
-			</image>
-
-
-<text name="gameyear" extra="true">
-  <text>{game:releaseyear}</text>
-  <origin>0 0</origin>
-				<verticalAlignment>top</verticalAlignment>
-									<multiLine>false</multiLine>
-				<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-  <lineSpacing>1</lineSpacing>
-				<color>ffffffff</color>
-</text>
-
-
-
- </stackpanel>
--->
-
 </customView>
 
 
@@ -1629,8 +1308,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<showVideoAtDelay>-1</showVideoAtDelay>
 	</imagegrid>
 
-	<video name="md_video">
 
+
+	<video name="md_video">
 		<origin>0.5 0</origin>
 		<pos>0.5 -0.15</pos>
 		<!--<size>1 1</size>-->
@@ -1645,9 +1325,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<loops>10</loops>
 		<effect>none</effect>
 		<linearSmooth>true</linearSmooth>
-					<storyboard event="activate">
-				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
-			</storyboard>
 	</video>
 
 
@@ -1764,226 +1441,14 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<pos>0.03 0.199074074074074</pos>
 		<size>0.46 0.68</size>
 		<autoLayout>3 2</autoLayout>
-
-		<!--<autoLayout if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd'">3 3</autoLayout>
-
-
-		<autoLayout if="{system.theme} == 'sdlpop'">1 1</autoLayout>
-
-
-		<autoLayout if="{system.theme} == 'ngpc' || {system.theme} == 'ngp'">3 2</autoLayout>
-		<autoLayout if="{system.theme} == 'advision'">4 1</autoLayout>
-
-		<autoLayout if="{system.theme} == 'supergrafx' || {system.theme} == 'pce-cd'  || {system.theme} == 'pcengine'  || {system.theme} == 'psx' || {system.theme} == 'neogeocd' || {system.theme} == 'dreamcast' || {system.theme} == '3do' || {system.theme} == 'gba' || {system.theme} == 'gb' || {system.theme} == 'gb2players'|| {system.theme} == 'cdi'|| {system.theme} == 'nds' || {system.theme} == 'fds' || {system.theme} == 'virtualboy' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players' || {system.theme} == '3ds'  || {system.theme} == 'segacd'   || {system.theme} == 'atarilynx' || {system.theme} == 'gx4000'">3 2</autoLayout>
-
-	-->
 	</imagegrid>
-
-
-
-<!--
-	<container name="metas">
-		<size>1 1</size> 
-		<origin>0 0</origin>
-		<pos>0.02 0.045</pos>
-		<zIndex>1900</zIndex>
-
-
-		<image name="meta-genre" extra="true">
-			<origin>0 0</origin>
-			<pos>0.5 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-genre.svg</path>
-			<path>./${system.theme}/_inc/meta-genre.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
-
-		<text name="metagenre" extra="true">
-			<text>{game:genre}</text>
-			<origin>0 0</origin>
-			<pos>0.5 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<alignment>center</alignment>
-			<color>B3B3B3</color>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
-
-
-		<image name="meta-players" extra="true">
-			<origin>0 0</origin>
-			<pos>0.6046875 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-players.svg</path>
-			<path>./${system.theme}/_inc/meta-players.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
-
-
-
-		<text name="players" extra="true">
-			<text>{game:players}</text>
-			<origin>0 0</origin>
-			<pos>0.6046875 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<alignment>center</alignment>
-			<color>B3B3B3</color>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
-
-
-
-		<image name="meta-publisher" extra="true">
-			<origin>0 0</origin>
-			<pos>0.709375 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-publisher.svg</path>
-			<path>./${system.theme}/_inc/meta-publisher.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
-
-
-
-		<text name="publisher" extra="true">
-			<text>{game:publisher}</text>
-			<origin>0 0</origin>
-			<pos>0.709375 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<color>B3B3B3</color>
-			<alignment>center</alignment>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-		</text>
-
-
-		<image name="date" extra="true">
-			<origin>0 0</origin>
-			<pos>0.8140625 0.443037037037037</pos>
-			<size>0.0625 0.0740740740740741</size>
-			<path>./_inc/assets/meta-date.svg</path>
-			<path>./${system.theme}/_inc/meta-date.svg</path>
-			<linearSmooth>true</linearSmooth>
-			<zIndex>99</zIndex>
-		</image>
-
-
-		<text name="releasedate" extra="true">
-			<text>{game:releaseyear}</text>
-			<origin>0 0</origin>
-			<pos>0.8140625 0.5013703703703704</pos>
-			<size>0.0625 0.034259259259259</size>
-			<color>B3B3B3</color>
-			<alignment>center</alignment>
-			<fontSize>0.025</fontSize>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-		</text>
-
-
-		<image name="dividers" extra="true">
-			<origin>0 0</origin>
-			<pos>0.5833333333333333 0.4429444444444444</pos>
-			<size>0.2098958333333333 0.0462962962962963</size>
-			<path>./_inc/assets/dividers.svg</path>
-			<zIndex>99</zIndex>
-			<linearSmooth>true</linearSmooth>
-		</image>
-		
-
-
-		<image name="marquee">
-			<path>{game:marquee}</path>
-			<pos>0.5 0.38</pos>
-			<origin>0 1</origin>
-			<maxSize>0.28 0.2</maxSize>
-			<zIndex>100</zIndex>
-		</image>
-
-
-		<text name="description" extra="true">
-			<text>{game:desc}</text>
-			<origin>0 0</origin>
-			<pos>0.5 0.60</pos>
-			<size>0.39 0.20</size>
-			<color>B3B3B3</color>
-			<alignment>left</alignment>
-			<fontSize>0.035</fontSize>
-			<emptyTextDefaults>none</emptyTextDefaults>
-			<verticalAlignment>top</verticalAlignment>
-			<autoScroll>vertical</autoScroll>
-			<autoScrollDelay>2000</autoScrollDelay>
-			<autoScrollSpeed>50</autoScrollSpeed>
-			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-		</text>
-
-
-
-
-<stackpanel name="collectionsystem" extra="true">
-	<visible>false</visible>
-				<visible if="
-					{system.theme} == 'arcade' ||
-					{system.theme} == 'auto-adventure' ||
-					{system.theme} == 'auto-beatemup' ||
-					{system.theme} == 'auto-favorites' ||
-					{system.theme} == 'auto-fight' ||
-					{system.theme} == 'auto-lightgun' ||
-					{system.theme} == 'auto-platform' ||
-					{system.theme} == 'auto-racedriving' ||
-					{system.theme} == 'auto-roleplayings' ||
-					{system.theme} == 'auto-shootemup' ||
-					{system.theme} == 'auto-shooter' ||
-					{system.theme} == 'auto-sports' ||
-					{system.theme} == 'custom-collections'
-
-					">true</visible>
-	<pos>0.5 0.82</pos>
-				<size>0.39 0.10</size>
-         <orientation>horizontal</orientation>
-         <zIndex>99</zIndex>
-
-
- <text name="system-title">
-            <text>System: </text>
-				<color>B3B3B3</color>
-				<alignment>left</alignment>
-				<fontSize>0.035</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
- <text name="system-name">
-            <text>${theme.systemName}</text>
-				<color>B3B3B3</color>
-				<alignment>left</alignment>
-				<fontSize>0.035</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
-
-
-</stackpanel>
-
-	</container>
--->
-
 
 
 <container name="gameData" extra="true"><!-- --- this is the main container for ALL of the game data --- -->
 		<size>0.4 1</size> <!-- determine the width of the entire area. you do not need to adjust any of the inner element widths. -->
 		<origin>0 0</origin>
-		<!--<pos>-0.35 0.03</pos>-->
-		<!--<pos>0.5 0.44</pos>-->
 		<pos>0.52 0.44</pos> <!-- set the position of the game data -->
 		<zIndex>1900</zIndex>
-
-
-
-
-
-
 
 
 		<image name="marqueeinfo" extra="true">
@@ -1991,10 +1456,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0 0</pos>
 			<origin>0 1</origin>
 			<maxSize>0.70 0.2</maxSize>
+			<autoFade>false</autoFade>
 		</image>
-
-
-
 
 
 					<stackpanel name="metas" extra="true"> <!-- --- this is the main container for all of the meta data --- -->
@@ -2024,7 +1487,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="metagenre" extra="true">
 								<text>{game:genre}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -2072,7 +1535,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="publisher" extra="true">
 								<text>{game:publisher}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -2096,12 +1559,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 								<pos>0.5 0</pos>
 									<size>1 0.09</size>
 									<linearSmooth>true</linearSmooth>
-								
-					</image>
+								</image>
+
 				</container>
-
-
-
 
 
 
@@ -2141,20 +1601,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 					<!-- END metadata -->
 
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
 		<text name="description" extra="true">
 			<text>{game:desc}</text>
 			<origin>0 0</origin>
@@ -2170,10 +1616,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<autoScrollSpeed>50</autoScrollSpeed>
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 		</text>
-
-	
-
-
 
 
 <stackpanel name="collectionsystem" extra="true">
@@ -2242,9 +1684,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<showSnapshotDelay>true</showSnapshotDelay>
 		<loops>10</loops>
 		<effect>none</effect>
-			<storyboard event="activate">
-				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
-			</storyboard>
 	</video>
 
 
@@ -2257,15 +1696,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	</image>
 
 </customView>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2300,17 +1730,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<showSnapshotDelay>true</showSnapshotDelay>
 		<loops>10</loops>
 		<effect>none</effect>
-		
-			<storyboard event="activate">
-				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
-			</storyboard>
-
-<storyboard>
-				<animation property="opacity" from="0" to="1" duration="800" begin="800" mode="easeOut"/>
-			</storyboard>
-
-
-
 	</video>
 
 
@@ -2322,15 +1741,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<origin>0 0</origin>
 		<zIndex>8</zIndex>
 	</image>
-
-
-	<image name="gridOverlay" extra="true">
-		<storyboard>
-			<animation property="opacity" from="0" to="1" duration="100" begin="0" mode="easeOut"/>
-		</storyboard>
-	</image>
-
-	
 
 	<!-- Position of the boxes carousel -->
 
@@ -2350,18 +1760,10 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 						<fontSize>0.025</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-				
-				<storyboard>
-				<animation property="x" from="1.3" begin="300" duration="600" mode="easeOut"/>
-				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
-				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
-			</storyboard>
 		</imagegrid>
 
 
 		<gridtile name="default">
-			<!--<size>0.177083333333333 1</size>-->
 			<backgroundCornerSize>0 0</backgroundCornerSize>
 			<padding>10 10</padding>
 			<imageColor>4e4e4eff</imageColor>
@@ -2379,198 +1781,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 
-	<!--	<container name="metas">
-
-
-
-
-			<size>1 1</size> 
-			<origin>0 0</origin>
-			<pos>-0.39 0.03</pos>
-			<zIndex>1900</zIndex>
-
-
-			<image name="meta-genre" extra="true">
-				<origin>0 0</origin>
-				<pos>0.5 0.443037037037037</pos>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-genre.svg</path>
-				<path>./${system.theme}/_inc/meta-genre.svg</path>
-				<linearSmooth>true</linearSmooth>
-				<zIndex>99</zIndex>
-			</image>
-
-			<text name="metagenre" extra="true">
-				<text>{game:genre}</text>
-				<origin>0 0</origin>
-				<pos>0.5 0.5013703703703704</pos>
-				<size>0.0625 0.034259259259259</size>
-				<alignment>center</alignment>
-				<color>B3B3B3</color>
-				<fontSize>0.025</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
-
-
-			<image name="meta-players" extra="true">
-				<origin>0 0</origin>
-				<pos>0.6046875 0.443037037037037</pos>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-players.svg</path>
-				<path>./${system.theme}/_inc/meta-players.svg</path>
-				<linearSmooth>true</linearSmooth>
-				<zIndex>99</zIndex>
-			</image>
-
-
-
-			<text name="players" extra="true">
-				<text>{game:players}</text>
-				<origin>0 0</origin>
-				<pos>0.6046875 0.5013703703703704</pos>
-				<size>0.0625 0.034259259259259</size>
-				<alignment>center</alignment>
-				<color>B3B3B3</color>
-				<fontSize>0.025</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
-
-
-
-			<image name="meta-publisher" extra="true">
-				<origin>0 0</origin>
-				<pos>0.709375 0.443037037037037</pos>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-publisher.svg</path>
-				<path>./${system.theme}/_inc/meta-publisher.svg</path>
-				<linearSmooth>true</linearSmooth>
-				<zIndex>99</zIndex>
-			</image>
-
-
-
-			<text name="publisher" extra="true">
-				<text>{game:publisher}</text>
-				<origin>0 0</origin>
-				<pos>0.709375 0.5013703703703704</pos>
-				<size>0.0625 0.034259259259259</size>
-				<color>B3B3B3</color>
-				<alignment>center</alignment>
-				<fontSize>0.025</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
-
-
-			<image name="date" extra="true">
-				<origin>0 0</origin>
-				<pos>0.8140625 0.443037037037037</pos>
-				<size>0.0625 0.0740740740740741</size>
-				<path>./_inc/assets/meta-date.svg</path>
-				<path>./${system.theme}/_inc/meta-date.svg</path>
-				<linearSmooth>true</linearSmooth>
-				<zIndex>99</zIndex>
-			</image>
-
-
-			<text name="releasedate" extra="true">
-				<text>{game:releaseyear}</text>
-				<origin>0 0</origin>
-				<pos>0.8140625 0.5013703703703704</pos>
-				<size>0.0625 0.034259259259259</size>
-				<color>B3B3B3</color>
-				<alignment>center</alignment>
-				<fontSize>0.025</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-			</text>
-
-
-			<image name="dividers" extra="true">
-				<origin>0 0</origin>
-				<pos>0.5833333333333333 0.4429444444444444</pos>
-				<size>0.2098958333333333 0.0462962962962963</size>
-				<path>./_inc/assets/dividers.svg</path>
-				<zIndex>99</zIndex>
-				<linearSmooth>true</linearSmooth>
-			</image>
-			
-
-
-			<image name="marquee">
-				<path>{game:marquee}</path>
-				<pos>0.5 0.38</pos>
-				<origin>0 1</origin>
-				<maxSize>0.28 0.2</maxSize>
-				<zIndex>100</zIndex>
-			</image>
-
-
-			<text name="description" extra="true">
-				<text>{game:desc}</text>
-				<origin>0 0</origin>
-				<pos>0.5 0.60</pos>
-				<size>0.39 0.20</size>
-				<color>B3B3B3</color>
-				<alignment>left</alignment>
-				<fontSize>0.035</fontSize>
-				<emptyTextDefaults>none</emptyTextDefaults>
-				<verticalAlignment>top</verticalAlignment>
-				<autoScroll>vertical</autoScroll>
-				<autoScrollDelay>2000</autoScrollDelay>
-				<autoScrollSpeed>50</autoScrollSpeed>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-
-			</text>
-
-
-<stackpanel name="collectionsystem" extra="true">
-	<visible>false</visible>
-				<visible if="
-					{system.theme} == 'arcade' ||
-					{system.theme} == 'auto-adventure' ||
-					{system.theme} == 'auto-beatemup' ||
-					{system.theme} == 'auto-favorites' ||
-					{system.theme} == 'auto-fight' ||
-					{system.theme} == 'auto-lightgun' ||
-					{system.theme} == 'auto-platform' ||
-					{system.theme} == 'auto-racedriving' ||
-					{system.theme} == 'auto-roleplayings' ||
-					{system.theme} == 'auto-shootemup' ||
-					{system.theme} == 'auto-shooter' ||
-					{system.theme} == 'auto-sports' ||
-					{system.theme} == 'custom-collections'
-					">true</visible>
-	<pos>0.5 0.82</pos>
-				<size>0.39 0.10</size>
-         <orientation>horizontal</orientation>
-         <zIndex>99</zIndex>
-
-
- <text name="system-title">
-            <text>System: </text>
-				<color>B3B3B3</color>
-				<alignment>left</alignment>
-				<fontSize>0.035</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
- <text name="system-name">
-            <text>${theme.systemName}</text>
-				<color>B3B3B3</color>
-				<alignment>left</alignment>
-				<fontSize>0.035</fontSize>
-				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
-			</text>
-
-
-</stackpanel>
-
-
-		</container>
-
--->
-
-
-
 
 
 
@@ -2578,20 +1788,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 <container name="gameData" extra="true"><!-- --- this is the main container for ALL of the game data --- -->
 		<size>0.4 1</size> <!-- determine the width of the entire area. you do not need to adjust any of the inner element widths. -->
 		<origin>0 0</origin>
-		<!--<pos>-0.35 0.03</pos>-->
-		<!--<pos>0.5 0.44</pos>-->
 		<pos>0.075 0.42</pos> <!-- set the position of the game data -->
 		<zIndex>1900</zIndex>
-		<storyboard>
-				<animation property="x" from="-0.5" begin="300" duration="600" mode="easeOut"/>
-				<animation property="opacity" from="0" to="0" duration="300" mode="easeOut"/>
-				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
-			</storyboard>
-
-
-
-
-
 
 
 
@@ -2600,10 +1798,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0 0</pos>
 			<origin>0 1</origin>
 			<maxSize>0.70 0.2</maxSize>
+			<autoFade>false</autoFade>
 		</image>
-
-
-
 
 
 					<stackpanel name="metas" extra="true"> <!-- --- this is the main container for all of the meta data --- -->
@@ -2633,7 +1829,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="metagenre" extra="true">
 								<text>{game:genre}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -2681,7 +1877,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 							<text name="publisher" extra="true">
 								<text>{game:publisher}</text>
 								<origin>0 0</origin>
-								<pos>0 0.05</pos> <!-- left/right, then up/down -->
+								<pos>0 0.05</pos>
 								<size>1 0.0625</size>
 								<alignment>center</alignment>
 								<color>B3B3B3</color>
@@ -2751,19 +1947,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 					<!-- END metadata -->
 
 
-
-
-
-
-
-
-
-
-
-
-	
-
-
 		<text name="description" extra="true">
 			<text>{game:desc}</text>
 			<origin>0 0</origin>
@@ -2811,18 +1994,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 <origin>0 0</origin>
 
 
-<!-- <container>
-	<size>1 1</size>
-	<origin>0 0</origin>
-	<pos>0 0</pos> -->
 
  <text name="system-title">
             <text>System: </text>
 				<color>B3B3B3</color>
 				<pos>0 0</pos>
 				<origin>0 0</origin>
-				<!--<size>1 1</size>
-				<alignment>center</alignment> -->
 				<fontSize>0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
@@ -2832,21 +2009,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
             <text>${theme.systemName}</text>
 				<color>B3B3B3</color>
 				<origin>0 0</origin>
-				 <!--<size>1 1</size>
-				<alignment>center</alignment> -->
 				<pos>0 0</pos>
 				<fontSize>0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
 
-
-		<!-- </container> -->
-
 </stackpanel>
-
-
-
-
 	</container>
 
 
@@ -2854,9 +2022,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 
+<!--
 
 		<container name="metasVertical">
-			<visible>false</visible> <!--- --- turned off currently --- -->
 			<size>1 1</size> 
 			<origin>0 0</origin>
 			<pos>0.88 -0.2</pos>
@@ -2947,6 +2115,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
 		</container>
+	-->
 
 
 
@@ -2955,23 +2124,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<linearSmooth>true</linearSmooth>	
 			<origin>0.5 0.734848484848485</origin>
 			<pos>0.91 0.52</pos>
-			<!--<pos>0.19 0.88</pos>-->
 			<size>0.09 0</size>
-			<storyboard>
-				<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
-			
-				<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
-				<animation property="scale" from="1" to="1.15" begin="600" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
-			</storyboard>
-
-
-
 		</image>
-
-
-
-
-
 
 
 		<text name="start" extra="true">
@@ -2985,22 +2139,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<size>0 0.05</size>
 			<fontSize>0.041666666666667</fontSize>
 			<color>ffffff</color>
-			<!--<storyboard>
-				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
-				<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
-			</storyboard>-->
-
-
-			<storyboard>
-				<animation property="opacity" from="0" to="0" duration="800" begin="0" mode="easeOut"/>
-				<animation property="opacity" from="0" to="1" duration="800" begin="800" mode="easeOut"/>
-			</storyboard>
 		</text>
-
-
-
-
-
 
 
 		<text name="md_name, md_publisher">
@@ -3012,6 +2151,15 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 
 	<!-- --- Subsets --- -->
+
+<subset name="animations" displayName="${subset.animations}">
+	<include name="Animations on">./_inc/system/animations.xml</include>
+	<include name="Main Menu only">./_inc/system/animations-lite.xml</include>
+	<include name="Animations off"/>
+</subset>
+
+
+
 
 	<subset name="buttonSet" displayName="${subset.buttonSet}">
 		<include name="Unique (default)"/>

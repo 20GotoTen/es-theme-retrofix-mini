@@ -1,0 +1,228 @@
+<theme defaultTransition="fade & slide">
+	<formatVersion>7</formatVersion>
+	
+
+
+	<view name="system">
+
+		<image name="sysBackgrounds"  extra="static">
+			<storyboard>
+				<animation property="scale" from="1.30" to="1" begin="0" duration="9000" mode="easeOut"/>
+			</storyboard>
+		</image>
+
+
+
+<image name="syslogoBG" extra="static">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="1600" begin="600" mode="easeOut"/>
+				<animation property="opacity" from="1" to="0.2" begin="1800" duration="1600" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+		</image> 
+
+
+		<image name="primaryBtn" extra="static">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="700" begin="500" mode="easeOut"/>
+				<animation property="scale" from="1" to="1.15" begin="700" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+		</image>
+
+
+		<image name="gamemarker" extra="static">
+						<size>0.010 0.35</size>
+						<pos>0 0.5</pos>
+						<origin>0 0.5</origin>
+			<storyboard>
+				<animation property="x" from="-0.010" to="-0.010" begin="0" duration="200" mode="easeOut"/>
+				<animation property="x" from="-0.010" to="0" begin="200" duration="500" delay="200" mode="easeOut"/>
+			</storyboard>
+		</image>
+
+
+				<text name="system-count,system-count-single,system-count-null" extra="true">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="500" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="700" begin="700" mode="easeOut"/>
+			</storyboard>
+		</text>
+
+		
+	</view>
+
+
+
+
+	<view name="basic">
+
+
+		<image name="background">
+			<storyboard>
+				<animation property="scale" from="1.30" to="1" begin="0" duration="9000" autoReverse="true" repeat="forever"  mode="easeInOut"/>
+			</storyboard>
+		</image>
+
+		<image name="logo">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
+			</storyboard>
+		</image>
+
+
+
+			<textlist name="gamelist">
+			<storyboard>
+				<animation property="opacity" from="0" to="1"  begin="0" duration="500" mode="easeOut"/>
+				<animation property="y" from="0.6" duration="500" mode="easeOut"/>
+				<animation property="opacity" from="1" to="0.6" begin="1000" duration="1000" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+ </textlist>
+
+	</view>
+
+
+
+
+	<view name="detailed">
+		
+
+		<image name="logo">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
+			</storyboard>
+		</image>
+
+
+
+		<textlist name="gamelist">
+			<storyboard>
+				<animation property="opacity" from="0" to="1"  begin="0" duration="500" mode="easeOut"/>
+				<animation property="y" from="0.6" duration="500" mode="easeOut"/>
+				<animation property="opacity" from="1" to="0.6" begin="1000" duration="1000" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+ </textlist>
+
+
+
+	<video name="md_video">
+			<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
+		</video>
+
+	</view>
+
+
+
+
+
+	<view name="grid">
+
+			<image name="logo">
+		<storyboard>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
+			</storyboard>
+	</image>
+
+
+		<video name="md_video">
+					<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
+	</video>
+
+	</view>
+
+
+	<customView name="Tiles" inherits="grid">
+			<video name="md_video">
+					<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
+	</video>
+
+</customView>
+
+
+
+
+<customView name="Boxes+Info" inherits="grid">
+
+
+<video name="md_video">
+			<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
+	</video>
+
+
+</customView>
+
+
+
+<customView name="Vertical Boxes" inherits="grid">
+
+		<video name="md_video">
+			<storyboard event="activate">
+				<animation property="opacity" from="0" to="1" begin="0" duration="300" mode="easeIn"/>
+			</storyboard>
+			<storyboard>
+				<animation property="opacity" from="0" to="1" duration="800" begin="800" mode="easeOut"/>
+			</storyboard>
+	</video>
+
+
+		<image name="gridOverlay" extra="true">
+		<storyboard>
+			<animation property="opacity" from="0" to="1" duration="100" begin="0" mode="easeOut"/>
+		</storyboard>
+	</image>
+
+
+	<imagegrid name="gamegrid">
+				<storyboard>
+				<animation property="x" from="1.3" begin="300" duration="600" mode="easeOut"/>
+				<animation property="opacity" from="0" to="0" duration="300" mode="linear"/>
+				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
+			</storyboard>
+		</imagegrid>
+
+
+		<container name="gameData" extra="true">
+		<storyboard>
+				<animation property="x" from="-0.5" begin="300" duration="600" mode="easeOut"/>
+				<animation property="opacity" from="0" to="0" duration="300" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="500" begin="300" mode="easeOut"/>
+			</storyboard>
+		</container>
+
+
+		<image name="primaryBtn" extra="true">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="600" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="600" begin="600" mode="easeOut"/>
+				<animation property="scale" from="1" to="1.15" begin="600" duration="600" autoReverse="true" repeat="forever" mode="easeInOut"/>
+			</storyboard>
+		</image>
+
+
+		<text name="start" extra="true">
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="800" begin="0" mode="easeOut"/>
+				<animation property="opacity" from="0" to="1" duration="800" begin="800" mode="easeOut"/>
+			</storyboard>
+		</text>
+
+
+</customView>
+
+
+
+
+
+</theme>
