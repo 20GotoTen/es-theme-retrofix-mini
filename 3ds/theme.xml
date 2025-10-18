@@ -8,7 +8,7 @@
   </view>
 
 
-  <view name="detailed">
+  <view name="basic, detailed">
 
     <textlist name="gamelist">
      <selectorColor>D12228</selectorColor>

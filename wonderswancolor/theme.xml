@@ -17,7 +17,7 @@
 		</video>
   </view>
 
-  <view name="detailed">
+  <view name="basic, detailed">
    <textlist name="gamelist">
     <selectorColor>178EE6</selectorColor>
     <selectedColor>ffffff</selectedColor>

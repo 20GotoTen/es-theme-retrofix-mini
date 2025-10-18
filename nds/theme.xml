@@ -21,7 +21,7 @@
 
   </view>
 
-  <view name="detailed">
+  <view name="basic, detailed">
    <textlist name="gamelist">
 <selectorColor>E60012</selectorColor>
 			<selectedColor>ffffff</selectedColor>

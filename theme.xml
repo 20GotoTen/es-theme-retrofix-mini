@@ -228,8 +228,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 				<lineSpacing>1</lineSpacing>
 			</batteryText>
 
-
-
 			<networkIcon name="system-network-icon">
 				<maxSize>1 1</maxSize>
 				<color>ffffff</color>
@@ -238,20 +236,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 				<planemodeIcon>./_inc/system/network-icon-off.svg</planemodeIcon>
 			</networkIcon>
 
-
-
-
-
-			<clock name="system-clock">
+<clock name="system-clock">
 				<color>ffffff</color>
 				<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
 				<fontSize>0.035</fontSize>
 				<lineSpacing>1</lineSpacing>
 			</clock>
-
-
-
-
 
 		</stackpanel> <!-- -------- END stackpanel implementation for system screen ------ -->
 
@@ -1061,7 +1051,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<margin>0 0</margin>
 		<autoLayout>5 1</autoLayout>
 		<autoLayoutSelectedZoom>1.2</autoLayoutSelectedZoom>
-		<gameImage>./resources/noimage-default.png</gameImage>
+		<!--<gameImage>./resources/noimage-default.png</gameImage>-->
 
 		
 		<autoLayout if="{system.theme} == 'psp' || {system.theme} == 'saturn' || {system.theme} == 'c64'  || {system.theme} == 'c20' || {system.theme} == 'zxspectrum'">7 1</autoLayout>

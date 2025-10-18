@@ -4,7 +4,7 @@
 <include>./../_inc/system/hidenames.xml</include>
 
 
-  <view name="detailed">
+  <view name="basic, detailed">
 
     <textlist name="gamelist">
      <selectorColor>EB222C</selectorColor>

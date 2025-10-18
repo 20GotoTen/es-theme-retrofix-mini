@@ -23,7 +23,7 @@
 
 
 
-  <view name="detailed">
+  <view name="basic, detailed">
    <textlist name="gamelist">
     <selectorColor>FF0000</selectorColor>
     <selectedColor>ffffff</selectedColor>
