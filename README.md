@@ -10,6 +10,9 @@ First release 22/09/2025
 ![Screenshots](https://github.com/20GotoTen/es-theme-retrofix-mini/blob/main/_inc/screenshot/retrofixmini.png "screenshots")
 
 
+Based on my original Retrofix theme for Batocera / Retrobat (you can download it here: ![https://github.com/20GotoTen/es-theme-retrofix] )
+
+
 Notice:
 -------
 - All system logos, game artwork, screenshots and trademarks are copyright of their respective owners. 
