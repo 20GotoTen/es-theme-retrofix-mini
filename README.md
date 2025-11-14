@@ -2,10 +2,15 @@ Retrofix Mini - A handheld 16:9 theme for Batocera and Knulli devices
 ====================================================
 
 Theme designed by 20Goto10
-Version 0.1
+Version 1.0
+1.0 released 18 October 2025
 First release 22/09/2025
 
 ![Logo](https://github.com/20GotoTen/es-theme-retrofix-mini/blob/main/_inc/screenshot/reposcreen.png "logo")
+![Screenshots](https://github.com/20GotoTen/es-theme-retrofix-mini/blob/main/_inc/screenshot/retrofixmini.png "screenshots")
+
+
+Based on my original Retrofix theme for Batocera / Retrobat (you can download it here: (https://github.com/20GotoTen/es-theme-retrofix)
 
 
 Notice:

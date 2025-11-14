@@ -22,7 +22,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<subset.artworkregion>System logos</subset.artworkregion>
 		<subset.buttonSet>Button Set</subset.buttonSet>
 		<theme.systemName>contains(lower({game:systemName}), 'sega cd') ? 'Mega-CD' : {game:systemName} ||
-			{game:systemName} == 'Mame' ? 'M.A.M.E.' : {game:systemName} || {game:systemName} == 'Super Nintendo Entertainment System' ? 'Super Nintendo' : {game:systemName}</theme.systemName> <!-- thanks to Pajarorrojo the the help! -->
+			{game:systemName} == 'Mame' ? 'M.A.M.E.' : {game:systemName} || {game:systemName} == 'Super Nintendo Entertainment System' ? 'Super Nintendo' : {game:systemName}|| {game:systemName} == 'Nintendo Entertainment System' ? 'NES' : {game:systemName}</theme.systemName> <!-- thanks to Pajarorrojo the the help! -->
 
 	</variables>
 
@@ -52,6 +52,23 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<include name="US"/>
 		<include name="EU"/>
 	</subset>
+
+
+
+
+
+	<subset name="aspect-ratio" displayName="${theme.aspect-ratio}">
+		<include if="{screen.ratio} == '4/3'" name="4-3" displayName="4:3 (${theme.detected})" />
+		<include if="{screen.ratio} == '16/9'" name="16-9" displayName="16:9 (${theme.detected})" />
+	</subset>
+	<subset name="aspect-ratio" displayName="${theme.aspect-ratio}">
+		<include name="16-9" displayName="16:9 widescreen" />
+		<include name="4-3" displayName="4:3 standard" />
+	</subset>
+
+
+
+
 
 
 
@@ -86,22 +103,28 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<menuText name="menutitle">
 			<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
 			<fontSize>0.048</fontSize>
+			<!-- <fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			 <fontSize ifSubset="aspect-ratio:16-9">0.048</fontSize>-->
 			<color>d9d9d9</color>
 		</menuText>
 
 		<menuText name="menufooter">
 			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
 			<fontSize>0.030</fontSize>
+			<!--<fontSize ifSubset="aspect-ratio:4-3">0.020</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.030</fontSize>-->
 			<color>777777FF</color>
 		</menuText>
 
 		<menuText name="menutext">
 			<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
 			<fontSize>0.040</fontSize>
+			<fontSize ifSubset="aspect-ratio:4-3">0.035</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.040</fontSize>
 			<color>8E8E8E</color>
 			<separatorColor>00000000</separatorColor>
-			<selectorColor>5E0000</selectorColor>
-			<selectorColorEnd>5E0000</selectorColorEnd>
+			<selectorColor>3E3E3Eff</selectorColor>
+			<selectorColorEnd>3E3E3Eff</selectorColorEnd>
 			<forceUppercase>false</forceUppercase>
 			<lineSpacing>2</lineSpacing>
 		</menuText>
@@ -115,6 +138,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<menuGroup name="menugroup"> <!-- styling for menu sections -->
 			<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
 			<fontSize>0.026</fontSize>
+						<!--<fontSize ifSubset="aspect-ratio:4-3">0.022</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.026</fontSize>-->
 			<color>ffffff</color>
 			<separatorColor>00000000</separatorColor>    
 			<backgroundColor>00000000</backgroundColor>
@@ -161,6 +186,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<visible>false</visible>
 			<pos>-2 -2</pos>
 		</text>
+
+
+
+			<rating name="md_rating">
+	 <visible>false</visible>
+    </rating>  
 
 
 
@@ -261,6 +292,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 <image name="background" extra="true">
 			<path>./_inc/assets/splashbg.png</path>
+			 <path ifSubset="aspect-ratio:4-3">./_inc/assets/4-3-ratio/splashbg.png</path>
+			 <path ifSubset="aspect-ratio:16-9">./_inc/assets/splashbg.png</path>
 			<pos>0 0</pos>
 			<origin>0 0</origin>
 			<linearSmooth>true</linearSmooth>
@@ -279,7 +312,10 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<origin>0.5 0.5</origin>
 			<pos>0.615 0.5</pos>
 			<size>0.770833333333333 0</size> 
-			<maxSize>2 2</maxSize>
+			<!--<maxSize>2 2</maxSize>-->
+
+			<size ifSubset="aspect-ratio:4-3">0 1</size>
+			<size ifSubset="aspect-ratio:16-9">0.770833333333333 0</size>
 		<!--	<path>./_inc/assets/defaultbg.png</path>-->
 			<path>./${system.theme}/_inc/bg.jpg</path>
 			<linearSmooth>true</linearSmooth>
@@ -293,9 +329,21 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<video name="backgroundvideo" extra="true">
 			<default>./_inc/system/blank.png</default>
 			<path>{random}</path>
+			
 			<pos>0.229166666666667 0</pos>
+			<pos ifSubset="aspect-ratio:4-3">0.229166666666667 0</pos>
+			<pos ifSubset="aspect-ratio:16-9">0.229166666666667 0</pos>
+
+
 			<origin>0 0</origin>
-			<size>0.770833333333333 1</size>
+
+			<!--<size>0.770833333333333 1</size>-->
+			<maxSize>0.770833333333333 1</maxSize>
+			<maxSize ifSubset="aspect-ratio:4-3">1.2 1</maxSize>
+			<maxSize ifSubset="aspect-ratio:16-9">0.770833333333333 1</maxSize>
+
+
+
 			<showSnapshotNoVideo>false</showSnapshotNoVideo>
 						<delay ifSubset="mainVideoDelay:1 Second">1</delay>
 			<delay ifSubset="mainVideoDelay:2 Seconds">2</delay>
@@ -327,8 +375,20 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<scrollSound>./_inc/sound/slide.wav</scrollSound>
 			<type>vertical</type>
 			<pos>0.035 0</pos>
+
+
+
+
 			<size>0.26 1</size>
+
+			 <size ifSubset="aspect-ratio:4-3">0.50 1</size>
+			 <size ifSubset="aspect-ratio:16-9">0.26 1</size>
+
 			<logoScale>2</logoScale>
+
+			 <logoScale ifSubset="aspect-ratio:4-3">2.5</logoScale>
+			 <logoScale ifSubset="aspect-ratio:16-9">2</logoScale>
+
 			<logoSize>0.12 0.12</logoSize>
 			<color>ffffff00</color>
 			<origin>0 0</origin>
@@ -427,10 +487,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0.365 0.915</pos>
 			<origin>0 1</origin>
 			<fontPath>./_inc/fonts/RedHatDisplay-Bold.ttf</fontPath>
-			<fontSize>0.035</fontSize>
 			<alignment>left</alignment>
 			<size>0 0.05</size>
+
 			<fontSize>0.041666666666667</fontSize>
+						<fontSize ifSubset="aspect-ratio:4-3">0.030</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">.041666666666667</fontSize>
 			<color>ffffff</color>
 		</text>
 
@@ -516,17 +578,26 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 <image name="background">
 			<path>./_inc/assets/splashbg.png</path>
+			 <path ifSubset="aspect-ratio:4-3">./_inc/assets/4-3-ratio/splashbg.png</path>
+			 <path ifSubset="aspect-ratio:16-9">./_inc/assets/splashbg.png</path>
 			<pos>0.75 0.5</pos>
 			<origin>0 0.5</origin>
 			<linearSmooth>true</linearSmooth>
 		</image>
 
 
-
 		<image name="logo">
 			<origin>0.5 0.5</origin>
 			<pos>0.10 0.11</pos>
+			<pos ifSubset="aspect-ratio:4-3">0.145 0.11</pos>
+<pos ifSubset="aspect-ratio:16-9">0.10 0.11</pos>
+
+
+
 			<maxSize>0.125 0.12</maxSize>
+<maxSize ifSubset="aspect-ratio:4-3">0.20 0.20</maxSize>
+<maxSize ifSubset="aspect-ratio:16-9">0.125 0.12</maxSize>
+
 		</image>
 
 
@@ -569,7 +640,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
  </textlist>
 
 
-
 	</view>
 
 
@@ -605,6 +675,15 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 		<image name="background2" extra="true">
 			<path>./_inc/assets/detailed.png</path>
+
+
+
+<path ifSubset="aspect-ratio:4-3">./_inc/assets/4-3-ratio/detailed.png</path>
+			<path ifSubset="aspect-ratio:16-9">./_inc/assets/detailed.png</path>
+
+
+
+
 			<size>1 1</size>
 			<pos>0 0</pos>
 			<origin>0 0</origin>
@@ -615,7 +694,11 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<image name="logo">
 			<origin>0.5 0.5</origin>
 			<pos>0.10 0.11</pos>
+			<pos ifSubset="aspect-ratio:4-3">0.145 0.11</pos>
+			<pos ifSubset="aspect-ratio:16-9">0.10 0.11</pos>
 			<maxSize>0.125 0.12</maxSize>
+			<maxSize ifSubset="aspect-ratio:4-3">0.20 0.20</maxSize>
+			<maxSize ifSubset="aspect-ratio:16-9">0.125 0.12</maxSize>
 		</image>
 
 
@@ -640,6 +723,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<pos>0 0.22</pos>
 			<origin>0 0</origin>
 			<size>0.325 0.73</size>
+			<size ifSubset="aspect-ratio:4-3">0.40 0.73</size>
+			<size ifSubset="aspect-ratio:16-9">0.325 0.73</size>
+
 			<selectorColor>424242</selectorColor>
 			<selectedColor>ffffff</selectedColor>
 			<primaryColor>959595</primaryColor>
@@ -648,6 +734,13 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<extraTextSelectedColor>ffffff4d</extraTextSelectedColor>
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			<fontSize>0.035</fontSize>
+
+
+
+						<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
+
+
 			<alignment>left</alignment>
 			<horizontalMargin>0.04</horizontalMargin>
 			<lines>9</lines>
@@ -663,6 +756,11 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<size>0.5 1</size> <!-- determine the width of the entire area. you do not need to adjust any of the inner element widths. -->
 		<origin>0 0</origin>
 		<pos>0.42 0.54</pos> <!-- set the position of the game data -->
+		<pos ifSubset="aspect-ratio:4-3">0.46 0.60</pos>
+		<pos ifSubset="aspect-ratio:16-9">0.42 0.54</pos>
+
+
+
 		<zIndex>1900</zIndex>
 		
 
@@ -818,9 +916,21 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<origin>0 0</origin>
 			<pos>0 0.20</pos>
 			<size>1 0.20</size>
+
+
+
+		<size ifSubset="aspect-ratio:4-3">1 0.16</size>
+		<size ifSubset="aspect-ratio:16-9">1 0.20</size>
+
+
 			<color>B3B3B3</color>
 			<alignment>center</alignment>
 			<fontSize>0.035</fontSize>
+
+									<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
+
+
 			<emptyTextDefaults>none</emptyTextDefaults>
 			<verticalAlignment>top</verticalAlignment>
 			<autoScroll>vertical</autoScroll>
@@ -879,9 +989,25 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 		<video name="md_video">
 			<pos>0.322916666666667 0.6740740740740741</pos>
+
+			<pos ifSubset="aspect-ratio:4-3">0.40 0</pos>
+			<pos ifSubset="aspect-ratio:16-9">0.322916666666667 0.6740740740740741</pos>
+
+
+
+
 			<maxSize>0.677083333333333 3</maxSize>
+			<maxSize ifSubset="aspect-ratio:4-3">0.60 2</maxSize>
+			<maxSize ifSubset="aspect-ratio:16-9">0.677083333333333 3</maxSize>
+
+
+
 			<zIndex>1</zIndex>
 			<origin>0 1</origin>
+			<origin ifSubset="aspect-ratio:4-3">0 0</origin>
+
+
+
 			<delay ifSubset="systemVideoDelay:5 Seconds">5</delay>
 			<delay ifSubset="systemVideoDelay:2 Seconds">2</delay>
 			<delay ifSubset="systemVideoDelay:1 Second">1</delay>
@@ -916,11 +1042,22 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<color>909090ff</color>
 	</image>  
 
-	<image name="logo">
-		<origin>0.5 0.5</origin>
-		<pos>0.10 0.11</pos>
-		<maxSize>0.125 0.12</maxSize>
-	</image>
+
+
+
+
+		<image name="logo">
+			<origin>0.5 0.5</origin>
+			<pos>0.10 0.11</pos>
+			<pos ifSubset="aspect-ratio:4-3">0.145 0.11</pos>
+			<pos ifSubset="aspect-ratio:16-9">0.10 0.11</pos>
+			<maxSize>0.125 0.12</maxSize>
+			<maxSize ifSubset="aspect-ratio:4-3">0.20 0.20</maxSize>
+			<maxSize ifSubset="aspect-ratio:16-9">0.125 0.12</maxSize>
+		</image>
+
+
+
 
 	<!-- this is the tint image overlay that provides clarity over the video BG -->
 
@@ -937,8 +1074,19 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<size>0.9083333333333333 0.718</size>
 		<!-- define base grid -->
 		<autoLayout>6 2</autoLayout>
+
+<autoLayout ifSubset="aspect-ratio:4-3">4 2</autoLayout>
+			<autoLayout ifSubset="aspect-ratio:16-9">6 2</autoLayout>
+
 		<!-- define grid layouts per system -->
 		<autoLayout if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd' ">4 2</autoLayout>
+
+
+
+
+
+
+
 		<autoLayout if="{system.theme} == 'psp'">8 2</autoLayout>
 		<!-- square boxes -->
 		<autoLayout if="{system.theme} == 'supergrafx' || {system.theme} == 'pce-cd'  || {system.theme} == 'pcengine'  || {system.theme} == 'psx' || {system.theme} == 'neogeocd' || {system.theme} == 'dreamcast' || {system.theme} == '3do' || {system.theme} == 'gb' || {system.theme} == 'gb2players'|| {system.theme} == 'cdi'|| {system.theme} == 'nds' || {system.theme} == 'fds' || {system.theme} == 'virtualboy' || {system.theme} == 'gbc' || {system.theme} == 'gbc2players' || {system.theme} == '3ds'  || {system.theme} == 'segacd'  ">5 2</autoLayout>
@@ -979,7 +1127,13 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<origin>1 1</origin>
 		<alignment>right</alignment>
 		<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
-		<fontSize>0.055</fontSize>
+
+
+<fontSize>0.055</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.035</fontSize>
+				<fontSize ifSubset="aspect-ratio:16-9">0.055</fontSize>
+
+
 		<color>ffffffff</color>
 		<zIndex>100</zIndex>
 	</text>
@@ -995,7 +1149,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<pos>0.9463541666666667 0.16</pos>
 		<origin>1 1</origin>
 		<size>0.4 0.034259259259259</size>
-		<color>B3B3B3</color>
+		<color>ffffff66</color>
 		<fontSize>0.035</fontSize>
 		<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 		<alignment>right</alignment>
@@ -1046,10 +1200,31 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	<imagegrid name="gamegrid">
 		<centerSelection>true</centerSelection>
 		<scrollLoop>true</scrollLoop>
+
 		<pos>0 0.14</pos>
+		<pos ifSubset="aspect-ratio:4-3">-0.2 0</pos>
+			<pos ifSubset="aspect-ratio:16-9">0 0.14</pos>
+
+
+
+
 		<size>1 0.55</size>
+		<size ifSubset="aspect-ratio:4-3">1.4 0.85</size>
+			<size ifSubset="aspect-ratio:16-9">1 0.55</size>
+
+
+
+
 		<margin>0 0</margin>
 		<autoLayout>5 1</autoLayout>
+
+		<autoLayout ifSubset="aspect-ratio:4-3">5 1</autoLayout>
+			<autoLayout ifSubset="aspect-ratio:16-9">5 1</autoLayout>
+
+
+
+
+
 		<autoLayoutSelectedZoom>1.2</autoLayoutSelectedZoom>
 		<!--<gameImage>./resources/noimage-default.png</gameImage>-->
 
@@ -1103,11 +1278,22 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 			<text name="md_name">
 				<pos>0.5 0.75</pos>
+				<pos ifSubset="aspect-ratio:4-3">0.5 0.76</pos>
+				<pos ifSubset="aspect-ratio:16-9">0.5 0.75</pos>
+
+
+
 				<size>0.99 0.055555555555556</size>
 				<origin>0.5 0.5</origin>
 				<alignment>center</alignment>
 				<fontPath>./_inc/fonts/RedHatDisplay-Regular.ttf</fontPath>
+
 				<fontSize>0.060</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.035</fontSize>
+				<fontSize ifSubset="aspect-ratio:16-9">0.060</fontSize>
+
+
+
 				<color>ffffffff</color>
 				<zIndex>100</zIndex>
 			</text>
@@ -1431,6 +1617,12 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<pos>0.03 0.199074074074074</pos>
 		<size>0.46 0.68</size>
 		<autoLayout>3 2</autoLayout>
+
+		<autoLayout ifSubset="aspect-ratio:4-3">2 2</autoLayout>
+			<autoLayout ifSubset="aspect-ratio:16-9">3 2</autoLayout>
+
+
+
 	</imagegrid>
 
 
@@ -1596,9 +1788,13 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<origin>0 0</origin>
 			<pos>0 0.20</pos>
 			<size>1 0.20</size>
+			<size ifSubset="aspect-ratio:4-3">1 0.15</size>
+			<size ifSubset="aspect-ratio:16-9">1 0.20</size>
 			<color>B3B3B3</color>
 			<alignment>left</alignment>
 			<fontSize>0.035</fontSize>
+			<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
 			<emptyTextDefaults>none</emptyTextDefaults>
 			<verticalAlignment>top</verticalAlignment>
 			<autoScroll>vertical</autoScroll>
@@ -1627,6 +1823,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 					">true</visible>
 	<pos>0 0.42</pos>
+	<pos ifSubset="aspect-ratio:4-3">0 0.36</pos>
+			<pos ifSubset="aspect-ratio:16-9">0 0.42</pos>
 				<size>1 0.10</size>
          <orientation>horizontal</orientation>
          <zIndex>99</zIndex>
@@ -1634,17 +1832,21 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
  <text name="system-title">
             <text>System: </text>
-				<color>B3B3B3</color>
+				<color>ffffff66</color>
 				<alignment>center</alignment>
 				<fontSize>0.035</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 				<origin>1 0</origin>
 			</text>
  <text name="system-name">
             <text>${theme.systemName}</text>
-				<color>B3B3B3</color>
+				<color>ffffff66</color>
 				<alignment>center</alignment>
 				<fontSize>0.035</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 				<origin>0 0</origin>
 			</text>
@@ -1737,12 +1939,41 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	<imagegrid name="gamegrid">
 		<centerSelection>true</centerSelection>
 		<scrollLoop>true</scrollLoop>
+
 		<pos>0.53 -0.30</pos>
+		<pos ifSubset="aspect-ratio:16-9">0.53 -0.30</pos>
+		<pos ifSubset="aspect-ratio:4-3">0.51 -0.30</pos>
+
+		<pos ifSubset="aspect-ratio:16-9" if="{system.theme} == 'gb' || {system.theme} == 'pcengine' || {system.theme} == 'gba' ">0.53 -0.30</pos>
+		<pos ifSubset="aspect-ratio:4-3" if="{system.theme} == 'gb' || {system.theme} == 'pcengine' || {system.theme} == 'gba'  ">0.51 -0.08</pos>
+
+
+
+
+
 		<size>0.30 1.60</size>
+		<size ifSubset="aspect-ratio:16-9" if="{system.theme} == 'gb' || {system.theme} == 'pcengine' || {system.theme} == 'gba'  ">0.30 1.60</size>
+		<size ifSubset="aspect-ratio:4-3" if="{system.theme} == 'gb' || {system.theme} == 'pcengine' || {system.theme} == 'gba'  ">0.30 1.2</size>
+
+
+
 		<origin>0.5 0.5</origin>
 		<scrollDirection>vertical</scrollDirection>
 		<scrollSound>./_inc/sound/cursor.wav</scrollSound>
 		<autoLayout>1 3</autoLayout>
+
+
+
+		<autoLayout ifSubset="aspect-ratio:16-9">1 3</autoLayout>
+
+
+
+				<autoLayout ifSubset="aspect-ratio:4-3" if="{system.theme} == 'n64' || {system.theme} == 'sfc' || {system.theme} == 'gameandwatch' || {system.theme} == 'scv'  || {system.theme} == 'snes'  || {system.theme} == 'n64dd' ">1 5</autoLayout>
+
+
+
+
+
 		<autoLayoutSelectedZoom>1</autoLayoutSelectedZoom>
 		<padding>0 0</padding>
 		<margin>0 0</margin>
@@ -1779,6 +2010,8 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		<size>0.4 1</size> <!-- determine the width of the entire area. you do not need to adjust any of the inner element widths. -->
 		<origin>0 0</origin>
 		<pos>0.075 0.42</pos> <!-- set the position of the game data -->
+		<pos ifSubset="aspect-ratio:4-3">0.054 0.44</pos>
+		<pos ifSubset="aspect-ratio:16-9">0.075 0.42</pos>
 		<zIndex>1900</zIndex>
 
 
@@ -1937,14 +2170,18 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 					<!-- END metadata -->
 
 
-		<text name="description" extra="true">
+<text name="description" extra="true">
 			<text>{game:desc}</text>
 			<origin>0 0</origin>
 			<pos>0 0.20</pos>
 			<size>1 0.20</size>
+		<size ifSubset="aspect-ratio:4-3">1 0.15</size>
+		<size ifSubset="aspect-ratio:16-9">1 0.20</size>
 			<color>B3B3B3</color>
 			<alignment>left</alignment>
 			<fontSize>0.035</fontSize>
+			<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
 			<emptyTextDefaults>none</emptyTextDefaults>
 			<verticalAlignment>top</verticalAlignment>
 			<autoScroll>vertical</autoScroll>
@@ -1953,7 +2190,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 		</text>
 
-	
+
 
 
 
@@ -1977,6 +2214,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 					">true</visible>
 	<pos>0 0.42</pos>
+	<pos ifSubset="aspect-ratio:4-3">0 0.36</pos>
+			<pos ifSubset="aspect-ratio:16-9">0 0.42</pos>
+
 				<size>1 0.10</size>
          <orientation>horizontal</orientation>
          <zIndex>99</zIndex>
@@ -1987,20 +2227,24 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
  <text name="system-title">
             <text>System: </text>
-				<color>B3B3B3</color>
+				<color>ffffff66</color>
 				<pos>0 0</pos>
 				<origin>0 0</origin>
 				<fontSize>0.035</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
 
 
  <text name="system-name">
             <text>${theme.systemName}</text>
-				<color>B3B3B3</color>
+				<color>ffffff66</color>
 				<origin>0 0</origin>
 				<pos>0 0</pos>
 				<fontSize>0.035</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.035</fontSize>
 				<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			</text>
 
@@ -2122,12 +2366,16 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<text>Start</text>
 			<color>ffffff</color>
 			<pos>0.91 0.66</pos>
+			<pos ifSubset="aspect-ratio:4-3">0.91 0.64</pos>
+			<pos ifSubset="aspect-ratio:16-9">0.91 0.66</pos>
 			<origin>0.5 0.5</origin>
 			<fontPath>./_inc/fonts/RedHatDisplay-Medium.ttf</fontPath>
 			<fontSize>0.035</fontSize>
 			<alignment>left</alignment>
 			<size>0 0.05</size>
 			<fontSize>0.041666666666667</fontSize>
+				<fontSize ifSubset="aspect-ratio:4-3">0.028</fontSize>
+			<fontSize ifSubset="aspect-ratio:16-9">0.041666666666667</fontSize>
 			<color>ffffff</color>
 		</text>
 
@@ -2137,6 +2385,14 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 		</text>
 
 	</customView>
+
+
+
+
+
+
+
+
 
 
 
@@ -2200,7 +2456,15 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	</subset>
 
 
+
+
+
+
+
+
 	<include>./_inc/system/overrides/${system.theme}.xml</include>
+
+
 	
 
 	<!-- There's nothing else down here! If you're that interested why not drop me a line and help out :) -->
