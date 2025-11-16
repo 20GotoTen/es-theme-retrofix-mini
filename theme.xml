@@ -1115,10 +1115,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	</text>
 
 
-	<!--<text name="gridtile" if="{system.theme} == 'retrobat'|| {system.theme} == 'flatpak'|| {system.theme} == 'imageviewer'">
-		<visible>true</visible>
-	</text>-->
-
 	<text name="md_name">
 		<pos>0.9463541666666667 0.12</pos>
 		<size>0.720833333333333 0.055555555555556</size>
