@@ -207,6 +207,7 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 
 	<view name="system, basic, detailed, grid, Vertical Boxes, Boxes, Boxes+Info">
 		<helpsystem name="help">
+			<visible>false</visible>
 			<pos>-2 -2</pos>
 			<textColor>f11c00</textColor>
 			<iconColor>f11c00</iconColor>
@@ -495,9 +496,6 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 			<fontSize ifSubset="aspect-ratio:16-9">.041666666666667</fontSize>
 			<color>ffffff</color>
 		</text>
-
-
-
 
 
 		<text name="system-count" extra="true">
@@ -1117,9 +1115,9 @@ GitHub:      	https://github.com/20GotoTen/es-theme-retrofix-mini
 	</text>
 
 
-	<text name="gridtile" if="{system.theme} == 'retrobat'|| {system.theme} == 'flatpak'|| {system.theme} == 'imageviewer'">
+	<!--<text name="gridtile" if="{system.theme} == 'retrobat'|| {system.theme} == 'flatpak'|| {system.theme} == 'imageviewer'">
 		<visible>true</visible>
-	</text>
+	</text>-->
 
 	<text name="md_name">
 		<pos>0.9463541666666667 0.12</pos>
